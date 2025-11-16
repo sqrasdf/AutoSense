@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import
 
+import 'package:autosense/pages/lesson_page.dart';
 import 'package:autosense/widgets/module_card.dart';
 import 'package:autosense/widgets/topic_card.dart';
 import 'package:flutter/material.dart';
@@ -73,6 +74,10 @@ class CourseCard extends StatelessWidget {
                     'Algorytmy podejmowania decyzji (omijanie, hamowanie)',
                 onTap: () {
                   debugPrint('Otwieram Strategie jazdy autonomicznej');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LessonPage()),
+                  );
                 },
               ),
               const SizedBox(height: 20),
