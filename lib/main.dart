@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import
 
+import 'package:autosense/pages/home_page.dart';
+import 'package:autosense/pages/settings_page.dart';
 import 'package:autosense/widgets/auto_sense_panel.dart';
 import 'package:autosense/widgets/course_card.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int selectedPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     // return Scaffold(
@@ -47,6 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
     //   ),
     // );
 
+    const List<Widget> pageOptions = <Widget>[HomePage(), SettingsPage()];
+
     return MaterialApp(
       title: 'AutoSense Demo',
       debugShowCheckedModeBanner: false,
@@ -57,21 +62,22 @@ class _MyHomePageState extends State<MyHomePage> {
       home: Scaffold(
         // backgroundColor: const Color(0xFFFFFF),
         backgroundColor: Color.fromRGBO(240, 240, 240, 255),
-        body: SafeArea(
-          child: const Center(
-            // child: Padding(
-            // padding: EdgeInsets.all(2.0),
-            child: CourseCard(
-              title: "AutoSense",
-              description:
-                  "Poznaj tajniki systemów ADAS i autonomicznych pojazdów",
-              progress: 0.12,
-              completedModules: 3,
-              totalModules: 25,
-            ),
-            // ),
-          ),
-        ),
+        // body: SafeArea(
+        //   child: const Center(
+        //     // child: Padding(
+        //     // padding: EdgeInsets.all(2.0),
+        //     child: CourseCard(
+        //       title: "AutoSense",
+        //       description:
+        //           "Poznaj tajniki systemów ADAS i autonomicznych pojazdów",
+        //       progress: 0.12,
+        //       completedModules: 3,
+        //       totalModules: 25,
+        //     ),
+        //     // ),
+        //   ),
+        // ),
+        body: [HomePage(), SettingsPage()][selectedPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const <Widget>[
             NavigationDestination(icon: Icon(Icons.home), label: "Home"),
@@ -80,6 +86,13 @@ class _MyHomePageState extends State<MyHomePage> {
               label: "Settings",
             ),
           ],
+          onDestinationSelected: (int index) {
+            setState(() {
+              selectedPageIndex = index;
+              print(selectedPageIndex);
+            });
+          },
+          selectedIndex: selectedPageIndex,
         ),
       ),
     );
