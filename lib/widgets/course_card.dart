@@ -64,6 +64,10 @@ class CourseCard extends StatelessWidget {
                 subtitle: 'Poznaj radary, LIDAR, kamery i ultradźwięki',
                 onTap: () {
                   debugPrint('Otwieram Sensory pojazdu');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LessonPage()),
+                  );
                 },
               ),
               const SizedBox(height: 20),
@@ -74,10 +78,6 @@ class CourseCard extends StatelessWidget {
                     'Algorytmy podejmowania decyzji (omijanie, hamowanie)',
                 onTap: () {
                   debugPrint('Otwieram Strategie jazdy autonomicznej');
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LessonPage()),
-                  );
                 },
               ),
               const SizedBox(height: 20),
