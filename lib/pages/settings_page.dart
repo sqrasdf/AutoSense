@@ -14,11 +14,24 @@ class SettingsPage extends StatelessWidget {
           children: [
             // SettingsCard(icon: Icons.abc, title: "title", subtitle: "subtitle"),
             SettingsCard(
-              icon: Icons.personal_video_sharp,
+              icon: Icons.person_outlined,
               iconBackgroundColor: Colors.blue.shade100,
-              badgeText: "badgeText",
-              title: "title",
-              description: "description",
+              iconColor: Colors.blue.shade700,
+              text: "Profil użytkownika",
+            ),
+            SizedBox(height: 15),
+            SettingsCard(
+              icon: Icons.notifications_none_outlined,
+              iconBackgroundColor: Colors.green.shade100,
+              iconColor: Colors.green.shade700,
+              text: "Powiadomienia",
+            ),
+            SizedBox(height: 15),
+            SettingsCard(
+              icon: Icons.info_outlined,
+              iconBackgroundColor: Colors.grey.shade300,
+              iconColor: Colors.grey.shade700,
+              text: "O aplikacji",
             ),
           ],
         ),

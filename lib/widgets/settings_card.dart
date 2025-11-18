@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 class SettingsCard extends StatelessWidget {
   final IconData icon;
   final Color iconBackgroundColor;
+  final Color iconColor;
 
-  final String badgeText;
-  final String title;
-  final String description;
+  // final String badgeText;
+  final String text;
+  // final String description;
 
   const SettingsCard({
     super.key,
     required this.icon,
     required this.iconBackgroundColor,
-    required this.badgeText,
-    required this.title,
-    required this.description,
+    required this.iconColor,
+    // required this.badgeText,
+    required this.text,
+    // required this.description,
   });
 
   @override
@@ -56,16 +58,10 @@ class SettingsCard extends StatelessWidget {
               color: iconBackgroundColor,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Center(
-              child: Icon(
-                Icons.person_outline_rounded,
-                size: 30,
-                color: Colors.blue.shade700,
-              ),
-            ),
+            child: Center(child: Icon(icon, size: 30, color: iconColor)),
           ),
           SizedBox(width: 10),
-          Text("Profil użytkownika"),
+          Text(text),
           Expanded(child: Container()),
           Icon(Icons.arrow_forward_ios_rounded),
         ],
