@@ -2,6 +2,7 @@
 
 import 'package:autosense/pages/home_page.dart';
 import 'package:autosense/pages/settings_page.dart';
+import 'package:autosense/pages/topic_page.dart';
 import 'package:autosense/widgets/auto_sense_panel.dart';
 import 'package:autosense/widgets/course_card.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     //   ),
     // );
 
-    const List<Widget> pageOptions = <Widget>[HomePage(), SettingsPage()];
+    // const List<Widget> pageOptions = <Widget>[HomePage(), SettingsPage()];
 
     return MaterialApp(
       title: 'AutoSense Demo',
@@ -77,13 +78,17 @@ class _MyHomePageState extends State<MyHomePage> {
         //     // ),
         //   ),
         // ),
-        body: [HomePage(), SettingsPage()][selectedPageIndex],
+        body: [HomePage(), SettingsPage(), TopicPage()][selectedPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const <Widget>[
             NavigationDestination(icon: Icon(Icons.home), label: "Home"),
             NavigationDestination(
               icon: Icon(Icons.settings),
               label: "Settings",
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.school),
+              label: "Lesson page",
             ),
           ],
           onDestinationSelected: (int index) {
