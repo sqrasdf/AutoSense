@@ -13,11 +13,42 @@ class _TopicPageState extends State<TopicPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 70,
+        shadowColor: Colors.black,
+        // backgroundColor: Colors.white,
+        elevation: 0,
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.grey.shade300,
+              ),
+              padding: EdgeInsets.all(6),
+              child: Text(
+                "Lekcja 1",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "Podstawy LIDAR",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+        leading: Icon(Icons.arrow_back),
+      ),
       body: Padding(
-        padding: EdgeInsetsGeometry.symmetric(vertical: 30, horizontal: 20),
+        padding: EdgeInsetsGeometry.symmetric(vertical: 0, horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Divider(),
+
               SizedBox(height: 20),
               Row(
                 children: [
