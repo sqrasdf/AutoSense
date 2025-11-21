@@ -91,6 +91,17 @@ class _TopicPageState extends State<TopicPage> {
               //   ),
               // ),
               TitlePanel(title: "Podstawy LIDAR", lessonNumber: 1),
+
+              Divider(),
+
+              SizedBox(height: 20),
+
+              IntroPanel(
+                title: "Jak działa technologia LIDAR?",
+                icon: Icons.radar,
+                description:
+                    "Poznaj fundamenty technologii, która rewolucjonizuje autonomiczne pojazdy.",
+              ),
             ],
           ),
         ),
