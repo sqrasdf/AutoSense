@@ -1,5 +1,6 @@
 import 'package:autosense/lesson_widgets/intro_panel.dart';
 import 'package:autosense/lesson_widgets/title_panel.dart';
+import 'package:autosense/lesson_widgets/waves_card.dart';
 import 'package:flutter/material.dart';
 
 class TopicPage extends StatefulWidget {
@@ -102,6 +103,10 @@ class _TopicPageState extends State<TopicPage> {
                 description:
                     "Poznaj fundamenty technologii, która rewolucjonizuje autonomiczne pojazdy.",
               ),
+
+              SizedBox(height: 20),
+
+              WavesCard(),
             ],
           ),
         ),
