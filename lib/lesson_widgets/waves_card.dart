@@ -31,10 +31,12 @@ class _WavesCardState extends State<WavesCard>
   Widget build(BuildContext context) {
     return Container(
       height: 200,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
         gradient: const LinearGradient(
-          colors: [Color(0xFF0F1F3C), Color(0xFF007BFF)],
+          // colors: [Color(0xFF0F1F3C), Color(0xFF007BFF)],
+          colors: [Color(0xFF057dcd), Color(0xFF43b0f1)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -44,12 +46,11 @@ class _WavesCardState extends State<WavesCard>
           animation: _controller,
           builder: (context, child) {
             return Stack(
+              clipBehavior: Clip.none,
               alignment: Alignment.center,
               children: [
-                // -------- WAVES ----------
                 for (int i = 0; i < 4; i++) _buildWave(delay: i * 0.5),
 
-                // -------- CIRCLE WITH ICON ----------
                 Container(
                   width: 60,
                   height: 60,
@@ -61,9 +62,30 @@ class _WavesCardState extends State<WavesCard>
                     child: Icon(Icons.waves, color: Colors.white, size: 32),
                   ),
                 ),
+
+                animationObjectDots(top: 100, right: 60),
+                animationObjectDots(top: -50, right: 30),
+                animationObjectDots(top: 60, right: -30),
+                animationObjectDots(top: 40, right: 120),
+                animationObjectDots(top: -40, right: -70),
               ],
             );
           },
+        ),
+      ),
+    );
+  }
+
+  Widget animationObjectDots({required double top, required double right}) {
+    return Positioned(
+      top: top,
+      right: right,
+      child: Container(
+        width: 10,
+        height: 10,
+        decoration: BoxDecoration(
+          color: Colors.white54,
+          borderRadius: BorderRadius.circular(10),
         ),
       ),
     );
@@ -83,7 +105,7 @@ class _WavesCardState extends State<WavesCard>
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: Colors.white.withOpacity(opacity * 0.4),
+            color: Colors.white.withValues(alpha: opacity * 0.4),
             width: 2,
           ),
         ),

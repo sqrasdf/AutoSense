@@ -1,4 +1,6 @@
+import 'package:autosense/lesson_widgets/info_panel.dart';
 import 'package:autosense/lesson_widgets/intro_panel.dart';
+import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/title_panel.dart';
 import 'package:autosense/lesson_widgets/waves_card.dart';
 import 'package:flutter/material.dart';
@@ -107,6 +109,17 @@ class _TopicPageState extends State<TopicPage> {
               SizedBox(height: 20),
 
               WavesCard(),
+
+              SizedBox(height: 30),
+
+              SectionTitle(title: "Wprowadzenie"),
+
+              SizedBox(height: 20),
+
+              InfoPanel(
+                description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+              ),
             ],
           ),
         ),
