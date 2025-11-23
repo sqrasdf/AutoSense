@@ -4,6 +4,7 @@ import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/title_panel.dart';
 import 'package:autosense/lesson_widgets/waves_card.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class TopicPage extends StatefulWidget {
   const TopicPage({super.key});
@@ -119,6 +120,45 @@ class _TopicPageState extends State<TopicPage> {
               InfoPanel(
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+              ),
+
+              Row(
+                children: [
+                  Lottie.network(
+                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json',
+                  ),
+                  Lottie.network(
+                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/U.json',
+                  ),
+                  Lottie.network(
+                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/T.json',
+                  ),
+                  Lottie.network(
+                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/O.json',
+                  ),
+                ],
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Lottie.network(
+                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/S.json',
+                    ),
+                    Lottie.network(
+                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/E.json',
+                    ),
+                    Lottie.network(
+                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/N.json',
+                    ),
+                    Lottie.network(
+                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/S.json',
+                    ),
+                    Lottie.network(
+                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/E.json',
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
