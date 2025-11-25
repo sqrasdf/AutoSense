@@ -160,6 +160,8 @@ class _TopicPageState extends State<TopicPage> {
                   ],
                 ),
               ),
+
+              Lottie.asset("assets/car_driving.json"),
             ],
           ),
         ),
