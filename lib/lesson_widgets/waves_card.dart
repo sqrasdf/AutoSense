@@ -35,7 +35,6 @@ class _WavesCardState extends State<WavesCard>
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
         gradient: const LinearGradient(
-          // colors: [Color(0xFF0F1F3C), Color(0xFF007BFF)],
           colors: [Color(0xFF057dcd), Color(0xFF43b0f1)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,

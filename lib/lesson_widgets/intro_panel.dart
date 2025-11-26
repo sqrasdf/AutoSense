@@ -20,13 +20,7 @@ class IntroPanel extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18),
         gradient: const LinearGradient(
-          colors: [
-            // Color.fromARGB(255, 231, 242, 255),
-            // Color.fromARGB(255, 190, 221, 247),
-            // Color.fromARGB(255, 223, 236, 239),
-            Color(0xffb4ddf7),
-            Color(0xffe1f1fc),
-          ],
+          colors: [Color(0xffb4ddf7), Color(0xffe1f1fc)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

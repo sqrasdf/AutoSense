@@ -14,9 +14,7 @@ class TitlePanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      // height: 70,
       padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
-      // decoration: BoxDecoration(color: Colors.pink.shade100),
       child: Row(
         children: [
           GestureDetector(

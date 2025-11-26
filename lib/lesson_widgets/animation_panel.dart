@@ -12,7 +12,6 @@ class AnimatinonPanel extends StatefulWidget {
 class _AnimatinonPanelState extends State<AnimatinonPanel>
     with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-    // duration: const Duration(seconds: 0.01),
     duration: const Duration(milliseconds: 10000),
     vsync: this,
   )..repeat();
@@ -34,7 +33,6 @@ class _AnimatinonPanelState extends State<AnimatinonPanel>
       ),
       child: Center(child: Text("Yoo")),
     );
-    // return circle;
     return Container(
       child: AnimatedBuilder(
         animation: _controller,

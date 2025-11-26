@@ -20,7 +20,6 @@ class ModuleCard extends StatelessWidget {
       onTap: onTap,
       child: SizedBox(
         child: Material(
-          // elevation: 4,
           borderRadius: BorderRadius.circular(14),
           clipBehavior: Clip.hardEdge,
           child: Column(
@@ -35,17 +34,6 @@ class ModuleCard extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  // child: Container(
-                  //   width: 56,
-                  //   height: 56,
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.white.withOpacity(0.12),
-                  //     shape: BoxShape.circle,
-                  //   ),
-                  //   child: Center(
-                  //     child: Icon(icon, size: 32, color: Colors.white),
-                  //   ),
-                  // ),
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30, bottom: 40),
                     child: Center(

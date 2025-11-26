@@ -12,7 +12,6 @@ class SettingsPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // SettingsCard(icon: Icons.abc, title: "title", subtitle: "subtitle"),
             SettingsCard(
               icon: Icons.person_outlined,
               iconBackgroundColor: Colors.blue.shade100,

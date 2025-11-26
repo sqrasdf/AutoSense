@@ -26,14 +26,6 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: 350,
-      // decoration: BoxDecoration(
-      //   color: Colors.white,
-      //   // borderRadius: BorderRadius.circular(12),
-      //   boxShadow: const [
-      //     BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(0, 3)),
-      //   ],
-      // ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -50,14 +42,6 @@ class CourseCard extends StatelessWidget {
               const SizedBox(height: 20),
               Text("Moduły edukacyjne"),
               const SizedBox(height: 20),
-              // TopicCard(
-              //   icon: Icons.radar,
-              //   title: "Sensory pojazdu",
-              //   description: "Poznaj radary, LIDAR, kamery i ultradźwięki",
-              //   onTap: () {
-              //     debugPrint("Kliknięto kartę: Sensory pojazdu");
-              //   },
-              // ),
               ModuleCard(
                 icon: Icons.radar,
                 title: 'Sensory pojazdu',

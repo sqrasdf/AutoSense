@@ -41,18 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int selectedPageIndex = 0;
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   body: SafeArea(child: Column(children: [AutoSensePanel()])),
-    //   bottomNavigationBar: NavigationBar(
-    //     destinations: const <Widget>[
-    //       NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-    //       NavigationDestination(icon: Icon(Icons.settings), label: "Settings"),
-    //     ],
-    //   ),
-    // );
-
-    // const List<Widget> pageOptions = <Widget>[HomePage(), SettingsPage()];
-
     return MaterialApp(
       title: 'AutoSense Demo',
       debugShowCheckedModeBanner: false,
@@ -61,23 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         useMaterial3: true,
       ),
       home: Scaffold(
-        // backgroundColor: const Color(0xFFFFFF),
         backgroundColor: Color.fromRGBO(240, 240, 240, 255),
-        // body: SafeArea(
-        //   child: const Center(
-        //     // child: Padding(
-        //     // padding: EdgeInsets.all(2.0),
-        //     child: CourseCard(
-        //       title: "AutoSense",
-        //       description:
-        //           "Poznaj tajniki systemów ADAS i autonomicznych pojazdów",
-        //       progress: 0.12,
-        //       completedModules: 3,
-        //       totalModules: 25,
-        //     ),
-        //     // ),
-        //   ),
-        // ),
         body: [HomePage(), SettingsPage(), TopicPage()][selectedPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const <Widget>[

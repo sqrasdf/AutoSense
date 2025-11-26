@@ -31,14 +31,12 @@ class SensorCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          // color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: const Color(0xFFE5E7EB)),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Ikona w niebieskim tle
             Container(
               width: 54,
               height: 54,
@@ -51,15 +49,13 @@ class SensorCard extends StatelessWidget {
 
             const SizedBox(width: 16),
 
-            // Tekst + badge
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // wiersz z badge po prawej
                   Row(
                     children: [
-                      Expanded(child: Container()), // pcha badge w prawo
+                      Expanded(child: Container()),
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 10,
@@ -83,7 +79,6 @@ class SensorCard extends StatelessWidget {
 
                   const SizedBox(height: 8),
 
-                  // Nagłówek
                   Text(
                     title,
                     style: const TextStyle(
@@ -95,7 +90,6 @@ class SensorCard extends StatelessWidget {
 
                   const SizedBox(height: 6),
 
-                  // Opis
                   Text(
                     description,
                     style: const TextStyle(

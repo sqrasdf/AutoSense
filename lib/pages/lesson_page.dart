@@ -1,20 +1,6 @@
 import 'package:autosense/widgets/sensor_card.dart';
 import 'package:flutter/material.dart';
 
-// class LessonPage extends StatefulWidget {
-//   const LessonPage({super.key});
-
-//   @override
-//   State<LessonPage> createState() => _LessonPageState();
-// }
-
-// class _LessonPageState extends State<LessonPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(child: Center(child: Text("yoo")));
-//   }
-// }
-
 class LessonPage extends StatelessWidget {
   const LessonPage({super.key});
 
@@ -66,7 +52,6 @@ class LessonPage extends StatelessWidget {
                 description:
                     "Systemy parkowaniai wykrywanie obiektów w bliskim otoczeniu pojazdu. Pracyzja do centymetra.",
               ),
-              // Expanded(child: Container()),
             ],
           ),
         ),
