@@ -1,3 +1,5 @@
+import 'package:autosense/lesson_widgets/info_panel.dart';
+import 'package:autosense/widgets/about_card.dart';
 import 'package:autosense/widgets/settings_card.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +34,10 @@ class SettingsPage extends StatelessWidget {
               iconColor: Colors.grey.shade700,
               text: "O aplikacji",
             ),
+
+            SizedBox(height: 15),
+
+            AboutCard(),
           ],
         ),
       ),
