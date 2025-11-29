@@ -1,4 +1,3 @@
-import 'package:autosense/pages/topic_page.dart';
 import 'package:flutter/material.dart';
 
 class SensorCard extends StatelessWidget {
@@ -8,6 +7,7 @@ class SensorCard extends StatelessWidget {
   final String badgeText;
   final String title;
   final String description;
+  final Widget lesson;
 
   const SensorCard({
     super.key,
@@ -16,6 +16,7 @@ class SensorCard extends StatelessWidget {
     required this.badgeText,
     required this.title,
     required this.description,
+    required this.lesson,
   });
 
   @override
@@ -24,7 +25,7 @@ class SensorCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TopicPage()),
+          MaterialPageRoute(builder: (context) => lesson),
         );
       },
       child: Container(

@@ -1,4 +1,3 @@
-import 'package:autosense/lesson_widgets/info_panel.dart';
 import 'package:autosense/widgets/about_card.dart';
 import 'package:autosense/widgets/settings_card.dart';
 import 'package:flutter/material.dart';

@@ -1,3 +1,5 @@
+import 'package:autosense/pages/lesson_page_lidar.dart';
+import 'package:autosense/pages/lesson_page_radar.dart';
 import 'package:autosense/widgets/sensor_card.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +26,7 @@ class LessonPage extends StatelessWidget {
                 description:
                     "Detekcja obiektów z przodu pojazdu, pomiar prędkości i odległości. "
                     "Działa w każdych warunkach pogodowych.",
+                lesson: LessonPageRadar(),
               ),
               SizedBox(height: 20),
               SensorCard(
@@ -33,6 +36,7 @@ class LessonPage extends StatelessWidget {
                 title: "LIDAR",
                 description:
                     "Skan 3D otoczeniaza pomocą lasera. Precyzyjne wykrywanie pieszych, rowerzystów i przeszkód.",
+                lesson: LessonPageLidar(),
               ),
               SizedBox(height: 20),
               SensorCard(
@@ -42,6 +46,7 @@ class LessonPage extends StatelessWidget {
                 title: "Kamera",
                 description:
                     "Rozpoznawanie pasów ruchu, znaków drogowych i świateł. Analiza obrazu w czasie rzeczywistym.",
+                lesson: LessonPageRadar(),
               ),
               SizedBox(height: 20),
               SensorCard(
@@ -51,6 +56,7 @@ class LessonPage extends StatelessWidget {
                 title: "Ultradźwięki",
                 description:
                     "Systemy parkowaniai wykrywanie obiektów w bliskim otoczeniu pojazdu. Pracyzja do centymetra.",
+                lesson: LessonPageRadar(),
               ),
             ],
           ),
