@@ -50,27 +50,28 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       home: Scaffold(
         backgroundColor: Color.fromRGBO(240, 240, 240, 255),
-        body: [HomePage(), SettingsPage(), TopicPage()][selectedPageIndex],
-        bottomNavigationBar: NavigationBar(
-          destinations: const <Widget>[
-            NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-            NavigationDestination(
-              icon: Icon(Icons.settings),
-              label: "Settings",
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.school),
-              label: "Lesson page",
-            ),
-          ],
-          onDestinationSelected: (int index) {
-            setState(() {
-              selectedPageIndex = index;
-              print(selectedPageIndex);
-            });
-          },
-          selectedIndex: selectedPageIndex,
-        ),
+        // body: [HomePage(), SettingsPage(), TopicPage()][selectedPageIndex],
+        body: HomePage(),
+        // bottomNavigationBar: NavigationBar(
+        //   destinations: const <Widget>[
+        //     NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+        //     NavigationDestination(
+        //       icon: Icon(Icons.settings),
+        //       label: "Settings",
+        //     ),
+        //     NavigationDestination(
+        //       icon: Icon(Icons.school),
+        //       label: "Lesson page",
+        //     ),
+        //   ],
+        //   onDestinationSelected: (int index) {
+        //     setState(() {
+        //       selectedPageIndex = index;
+        //       print(selectedPageIndex);
+        //     });
+        //   },
+        //   selectedIndex: selectedPageIndex,
+        // ),
       ),
     );
   }

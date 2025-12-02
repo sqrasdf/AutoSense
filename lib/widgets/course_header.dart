@@ -1,3 +1,4 @@
+import 'package:autosense/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 class CourseHeader extends StatelessWidget {
@@ -38,6 +39,29 @@ class CourseHeader extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        const SizedBox(width: 20),
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
+              },
+              child: const CircleAvatar(
+                backgroundColor: Color(0xFFE0F0FF),
+                radius: 20,
+                child: Icon(
+                  Icons.person_outline,
+                  color: Colors.blueAccent,
+                  size: 27,
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
+          ],
         ),
       ],
     );
