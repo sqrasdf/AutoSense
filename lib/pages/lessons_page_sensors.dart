@@ -3,8 +3,8 @@ import 'package:autosense/pages/lesson_page_radar.dart';
 import 'package:autosense/widgets/sensor_card.dart';
 import 'package:flutter/material.dart';
 
-class LessonPage extends StatelessWidget {
-  const LessonPage({super.key});
+class LessonsPageSensors extends StatelessWidget {
+  const LessonsPageSensors({super.key});
 
   @override
   Widget build(BuildContext context) {

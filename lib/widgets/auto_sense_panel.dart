@@ -1,27 +1,68 @@
+import 'package:autosense/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 class AutoSensePanel extends StatelessWidget {
-  const AutoSensePanel({super.key});
+  final String title;
+  final String description;
+
+  const AutoSensePanel({
+    super.key,
+    required this.title,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        Row(
-          children: [
-            Container(
-              height: 60,
-              width: 60,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Color.fromRGBO(77, 164, 234, 255),
+        const CircleAvatar(
+          backgroundColor: Color(0xFFE0F0FF),
+          radius: 30,
+          child: Icon(Icons.sensors, color: Colors.blueAccent, size: 35),
+        ),
+        const SizedBox(width: 20),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.blueAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
               ),
-              child: Icon(Icons.radar, size: 40, color: Colors.white),
+              Text(
+                description,
+                style: const TextStyle(color: Colors.black87, fontSize: 13),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 20),
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
+              },
+              child: const CircleAvatar(
+                backgroundColor: Color(0xFFE0F0FF),
+                radius: 20,
+                child: Icon(
+                  Icons.person_outline,
+                  color: Colors.blueAccent,
+                  size: 27,
+                ),
+              ),
             ),
-            Text("AutoSense"),
+            const SizedBox(height: 30),
           ],
         ),
-        Text("Poznaj tajniki systemów ADAS i autonomiczncyh pojazdów"),
       ],
     );
   }

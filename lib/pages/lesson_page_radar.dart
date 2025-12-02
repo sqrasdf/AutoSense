@@ -1,7 +1,7 @@
 import 'package:autosense/lesson_widgets/info_panel.dart';
 import 'package:autosense/lesson_widgets/intro_panel.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
-import 'package:autosense/lesson_widgets/title_panel.dart';
+import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/waves_card.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -65,7 +65,10 @@ class _TopicPageState extends State<LessonPageRadar> {
               //     ],
               //   ),
               // ),
-              TitlePanel(title: "Podstawy działania radarów", lessonNumber: 1),
+              LessonTitlePanel(
+                title: "Podstawy działania radarów",
+                lessonNumber: 1,
+              ),
 
               Divider(),
 
@@ -93,6 +96,9 @@ class _TopicPageState extends State<LessonPageRadar> {
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
               ),
 
+              SizedBox(height: 20),
+              Lottie.asset("assets/radar.json", height: 200),
+              SizedBox(height: 20),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(

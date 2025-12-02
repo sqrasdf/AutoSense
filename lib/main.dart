@@ -4,7 +4,6 @@ import 'package:autosense/pages/home_page.dart';
 import 'package:autosense/pages/settings_page.dart';
 import 'package:autosense/pages/topic_page.dart';
 import 'package:autosense/widgets/auto_sense_panel.dart';
-import 'package:autosense/widgets/course_card.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -42,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AutoSense Demo',
+      title: 'AutoSense',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
@@ -50,28 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       home: Scaffold(
         backgroundColor: Color.fromRGBO(240, 240, 240, 255),
-        // body: [HomePage(), SettingsPage(), TopicPage()][selectedPageIndex],
         body: HomePage(),
-        // bottomNavigationBar: NavigationBar(
-        //   destinations: const <Widget>[
-        //     NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-        //     NavigationDestination(
-        //       icon: Icon(Icons.settings),
-        //       label: "Settings",
-        //     ),
-        //     NavigationDestination(
-        //       icon: Icon(Icons.school),
-        //       label: "Lesson page",
-        //     ),
-        //   ],
-        //   onDestinationSelected: (int index) {
-        //     setState(() {
-        //       selectedPageIndex = index;
-        //       print(selectedPageIndex);
-        //     });
-        //   },
-        //   selectedIndex: selectedPageIndex,
-        // ),
       ),
     );
   }

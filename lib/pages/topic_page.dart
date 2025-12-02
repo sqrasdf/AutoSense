@@ -1,7 +1,7 @@
 import 'package:autosense/lesson_widgets/info_panel.dart';
 import 'package:autosense/lesson_widgets/intro_panel.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
-import 'package:autosense/lesson_widgets/title_panel.dart';
+import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/waves_card.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -65,7 +65,7 @@ class _TopicPageState extends State<TopicPage> {
               //     ],
               //   ),
               // ),
-              TitlePanel(title: "Podstawy LIDAR", lessonNumber: 1),
+              LessonTitlePanel(title: "Podstawy LIDAR", lessonNumber: 1),
 
               Divider(),
 

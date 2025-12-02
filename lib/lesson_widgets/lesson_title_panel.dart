@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class TitlePanel extends StatelessWidget {
+class LessonTitlePanel extends StatelessWidget {
   final String title;
   final int lessonNumber;
 
-  const TitlePanel({
+  const LessonTitlePanel({
     super.key,
     required this.title,
     required this.lessonNumber,
