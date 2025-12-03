@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
               ModuleCard(
                 icon: Icons.traffic,
                 title: 'Symulacja drogowa',
-                subtitle: 'Analiza sytuacji na ddrodze z systemem AI',
+                subtitle: 'Analiza sytuacji na drodze z systemem AI',
                 onTap: () {
                   debugPrint('Otwieram Symuację drogową');
                 },
