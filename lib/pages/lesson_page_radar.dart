@@ -1,7 +1,13 @@
 import 'package:autosense/lesson_widgets/info_panel.dart';
 import 'package:autosense/lesson_widgets/intro_panel.dart';
+import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
+import 'package:autosense/lesson_widgets/main_text_lesson.dart';
+import 'package:autosense/lesson_widgets/numer_list_widget.dart';
+import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
+import 'package:autosense/lesson_widgets/table_radar_lidar_camera.dart';
+import 'package:autosense/lesson_widgets/text_icon_widget.dart';
 import 'package:autosense/lesson_widgets/waves_card.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -18,111 +24,157 @@ class _TopicPageState extends State<LessonPageRadar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 20),
+        padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 25),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // Container(
-              //   width: double.infinity,
-              //   // height: 70,
-              //   padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
-              //   // decoration: BoxDecoration(color: Colors.pink.shade100),
-              //   child: Row(
-              //     children: [
-              //       GestureDetector(
-              //         onTap: () => Navigator.pop(context),
-              //         child: Icon(Icons.arrow_back),
-              //       ),
-              //       SizedBox(width: 25),
-              //       Column(
-              //         mainAxisAlignment: MainAxisAlignment.center,
-              //         crossAxisAlignment: CrossAxisAlignment.start,
-              //         children: [
-              //           Container(
-              //             decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(14),
-              //               color: Colors.grey.shade300,
-              //             ),
-              //             padding: EdgeInsets.fromLTRB(8, 5, 8, 5),
-              //             child: Text(
-              //               "Lekcja 1",
-              //               style: TextStyle(
-              //                 fontSize: 12,
-              //                 fontWeight: FontWeight.bold,
-              //               ),
-              //             ),
-              //           ),
-              //           SizedBox(height: 10),
-              //           Text(
-              //             "Podstawy LIDAR",
-              //             style: TextStyle(
-              //               fontWeight: FontWeight.bold,
-              //               fontSize: 20,
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ],
-              //   ),
-              // ),
               LessonTitlePanel(
                 title: "Podstawy działania radarów",
                 lessonNumber: 1,
               ),
-
+              SizedBox(height: 5),
               Divider(),
-
-              SizedBox(height: 20),
-
-              IntroPanel(
-                title: "Jak działają radary?",
-                icon: Icons.radar,
-                description:
-                    "Poznaj fundamenty technologii, która rewolucjonizuje autonomiczne pojazdy.",
-              ),
-
-              SizedBox(height: 20),
-
-              WavesCard(),
-
-              SizedBox(height: 30),
+              SizedBox(height: 10),
 
               SectionTitle(title: "Wprowadzenie"),
-
+              SizedBox(height: 20),
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "Radar to jeden z kluczowych sensorów w autonomicznych pojazdach. Pomaga wykrywać obiekty znajdujące się przed samochodem oraz precyzyjnie mierzyć ich prędkość. Dzięki temu pojazd może bezpiecznie utrzymywać dystans, hamować, a nawet omijać przeszkody.",
+                  ),
+                ],
+              ),
               SizedBox(height: 20),
 
-              InfoPanel(
+              SectionTitle(title: "Czym jest radar?"),
+              SizedBox(height: 20),
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text: 'Słowo ,,radar” pochodzi od angielskiego ',
+                  ),
+                  const TextSpan(
+                    text: 'Radio Detection and Ranging',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const TextSpan(
+                    text:
+                        '. Oznacza urządzenie, które wykorzystuje fale radiowe do wykrywania obiektów oraz mierzenia ich odległości i prędkości.',
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        'W autonomicznych samochodach stosuje się głównie radary ',
+                  ),
+                  TextSpan(
+                    text: 'FMCW (Frequency Modulated Continuous Wave)',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color:
+                          Colors.grey[600], // Pogrubienie zachowuje szary kolor
+                    ),
+                  ),
+                  const TextSpan(
+                    text:
+                        ', które są precyzyjne, odporne na złe warunki pogodowe i nadają się do pracy w ruchu.',
+                  ),
+                ],
+                color: Colors.grey[600],
+              ),
+              SizedBox(height: 20),
+
+              SectionTitle(title: "Z czego składa się radar?"),
+              SizedBox(height: 20),
+              PointListWidget(
+                title: "Nadajnik",
                 description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+                    "Generuje fale radiowe o wysokiej częstotliwości (zwykle 76-81 GHz). Fale te są wysyłane w kierunku sceny przed pojazdem.",
               ),
-
               SizedBox(height: 20),
-              Lottie.asset("assets/radar.json", height: 200),
-              SizedBox(height: 20),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/R.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/D.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/R.json',
-                    ),
-                  ],
-                ),
+              PointListWidget(
+                title: "Anteny nadawcze i odbiorcze",
+                description:
+                    "Anteny kształtują wiązkę radaru i określają, w których kierunkach 'patrzy' sensor.",
               ),
+              SizedBox(height: 20),
+              PointListWidget(
+                title: "Odbiornik",
+                description:
+                    "Zbiera fale odbite od obiektów - innych aut, pieszych, barier, znaków.",
+              ),
+              SizedBox(height: 20),
+              PointListWidget(
+                title: "Procesor sygnałowy",
+                description:
+                    "Analizuje powracające sygnały, wyliczając odległość, prędkość oraz względne położenie obiektów.",
+              ),
+              SizedBox(height: 20),
 
-              Lottie.asset("assets/car_driving.json"),
+              SectionTitle(title: "Jak działa radar?"),
+              SizedBox(height: 20),
+              NumberListWidget(
+                number: 1,
+                title: "Emisja fali radiowej",
+                description:
+                    "Radar wysyła falę elektromagnetyczną w stronę drogi przed pojazdem.",
+              ),
+              SizedBox(height: 25),
+              NumberListWidget(
+                number: 2,
+                title: "Odbicie od obiektu",
+                description:
+                    "Gdy fala trafi na obiekt (np. samochód), część energii odbija się i wraca do radaru.",
+              ),
+              SizedBox(height: 25),
+              NumberListWidget(
+                number: 3,
+                title: "Pomiar czasu i częstotliwości",
+                description:
+                    "Procesor porównuje falę wysłaną z falą odebraną. Na podstawie różnicy w czasie oblicza odległość, a dzięki różnicy w częstotliwości (efekt Dopplera) oblicza prędkość obiektu.",
+              ),
+              SizedBox(height: 25),
+              NumberListWidget(
+                number: 4,
+                title: "Wyznaczenie położenia",
+                description:
+                    "Dzięki wielu antenom radar oblicza, pod jakim kątem znajduje się obiekt. W ten sposób tworzy prostą mapę otoczenia przed autem.",
+              ),
+              SizedBox(height: 25),
+
+              SectionTitle(
+                title: "Dlaczego radar jest ważny w autonomicznych pojazdach?",
+              ),
+              SizedBox(height: 10),
+              TextIconWidget(
+                icon: Icons.cloud_outlined,
+                text: "Działa w deszczu, mgle i ciemności.",
+              ),
+              SizedBox(height: 5),
+              TextIconWidget(
+                icon: Icons.speed_outlined,
+                text: "Dokładnie mierzy prędkość innych pojazdów.",
+              ),
+              SizedBox(height: 5),
+              TextIconWidget(
+                icon: Icons.check_circle_outline,
+                text:
+                    "Jest kluczowy w systemach jak ACC (Adaptive Cruise Control) i AEB (Automatic Emergency Braking).",
+              ),
+              SizedBox(height: 5),
+              TextIconWidget(
+                icon: Icons.settings_input_component_outlined,
+                text:
+                    "Współpracuje z kamerą i lidarem, tworząc kompletny obraz otoczenia.",
+              ),
+              SizedBox(height: 20),
+              LessonNavigationButtons(),
+              SizedBox(height: 40),
             ],
           ),
         ),

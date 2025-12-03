@@ -17,9 +17,11 @@ class SectionTitle extends StatelessWidget {
           ),
         ),
         SizedBox(width: 10),
-        Text(
-          title,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+        Expanded(
+          child: Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+          ),
         ),
       ],
     );
