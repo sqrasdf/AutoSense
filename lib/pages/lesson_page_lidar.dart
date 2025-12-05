@@ -1,10 +1,12 @@
-import 'package:autosense/lesson_widgets/info_panel.dart';
-import 'package:autosense/lesson_widgets/intro_panel.dart';
+import 'package:autosense/lesson_widgets/bullet_point_lesson.dart';
+import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
+import 'package:autosense/lesson_widgets/main_text_widget.dart';
+import 'package:autosense/lesson_widgets/numer_list_widget.dart';
+import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
-import 'package:autosense/lesson_widgets/waves_card.dart';
+import 'package:autosense/lesson_widgets/text_icon_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class LessonPageLidar extends StatefulWidget {
   const LessonPageLidar({super.key});
@@ -21,118 +23,195 @@ class _TopicPageState extends State<LessonPageLidar> {
         padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Container(
-              //   width: double.infinity,
-              //   // height: 70,
-              //   padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
-              //   // decoration: BoxDecoration(color: Colors.pink.shade100),
-              //   child: Row(
-              //     children: [
-              //       GestureDetector(
-              //         onTap: () => Navigator.pop(context),
-              //         child: Icon(Icons.arrow_back),
-              //       ),
-              //       SizedBox(width: 25),
-              //       Column(
-              //         mainAxisAlignment: MainAxisAlignment.center,
-              //         crossAxisAlignment: CrossAxisAlignment.start,
-              //         children: [
-              //           Container(
-              //             decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(14),
-              //               color: Colors.grey.shade300,
-              //             ),
-              //             padding: EdgeInsets.fromLTRB(8, 5, 8, 5),
-              //             child: Text(
-              //               "Lekcja 1",
-              //               style: TextStyle(
-              //                 fontSize: 12,
-              //                 fontWeight: FontWeight.bold,
-              //               ),
-              //             ),
-              //           ),
-              //           SizedBox(height: 10),
-              //           Text(
-              //             "Podstawy LIDAR",
-              //             style: TextStyle(
-              //               fontWeight: FontWeight.bold,
-              //               fontSize: 20,
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ],
-              //   ),
-              // ),
               LessonTitlePanel(title: "Podstawy LIDAR", lessonNumber: 2),
 
               Divider(),
 
               SizedBox(height: 20),
-
-              IntroPanel(
-                title: "Jak działa technologia LIDAR?",
-                icon: Icons.radar,
-                description:
-                    "Poznaj fundamenty technologii, która rewolucjonizuje autonomiczne pojazdy.",
-              ),
-
-              SizedBox(height: 20),
-
-              WavesCard(),
-
-              SizedBox(height: 30),
-
               SectionTitle(title: "Wprowadzenie"),
-
               SizedBox(height: 20),
-
-              InfoPanel(
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-              ),
-
-              Row(
+              MainTextWidget(
                 children: [
-                  Lottie.network(
-                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json',
-                  ),
-                  Lottie.network(
-                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/U.json',
-                  ),
-                  Lottie.network(
-                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/T.json',
-                  ),
-                  Lottie.network(
-                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/O.json',
+                  const TextSpan(
+                    text:
+                        "LIDAR to jeden z najdokładniejszych sensorów używanych w autonomicznych pojazdach. Dzięki niemu samochód potrafi „zobaczyć” otoczenie w trzech wymiarach - stworzyć mapę 3D dróg, budynków, pieszych i przeszkód.",
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/S.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/E.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/N.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/S.json',
-                    ),
-                    Lottie.network(
-                      'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/E.json',
-                    ),
-                  ],
-                ),
+              SizedBox(height: 16),
+              MainTextWidget(
+                color: Colors.grey[600],
+                children: [
+                  const TextSpan(
+                    text:
+                        "Umożliwia to precyzyjne omijanie obiektów oraz bezpieczne prowadzenie pojazdu nawet w skomplikowanym otoczeniu miejskim.",
+                  ),
+                ],
               ),
 
-              Lottie.asset("assets/car_driving.json"),
+              SizedBox(height: 30),
+              SectionTitle(title: "Czym jest LIDAR?"),
+              SizedBox(height: 20),
+              MainTextWidget(
+                children: [
+                  const TextSpan(text: "Nazwa pochodzi od angielskiego "),
+                ],
+              ),
+              SizedBox(height: 16),
+              MainTextWidget(
+                children: [
+                  const TextSpan(text: "Laserowe impulsy pozwalają mierzyć"),
+                ],
+              ),
+              SizedBox(height: 10),
+              BulletPointLesson(text: "odległość do obiektów,"),
+              SizedBox(height: 10),
+              BulletPointLesson(text: "ich kształt,"),
+              SizedBox(height: 10),
+              BulletPointLesson(
+                text: "ich pozycję w trójwymiarowej przestrzeni.",
+              ),
+              SizedBox(height: 20),
+              MainTextWidget(
+                color: Colors.grey[600],
+                children: [
+                  const TextSpan(text: "W efekcie powstaje tzw. "),
+                  const TextSpan(
+                    text: "chmura punktów",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const TextSpan(
+                    text: " (point cloud), czyli dokładna mapa otoczenia.",
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+
+              SectionTitle(title: "Z czego składa się LIDAR?"),
+              SizedBox(height: 20),
+              PointListWidget(
+                title: "Laser / emiter światła",
+                description:
+                    "Wysyła bardzo krótkie impulsy światła w wielu kierunkach.",
+              ),
+              SizedBox(height: 20),
+              PointListWidget(
+                title: "Detektor / odbiornik",
+                description: "Zbiera światło odbite od obiektów.",
+              ),
+              SizedBox(height: 20),
+              PointListWidget(
+                title: "Mechanizm skanujący",
+                description:
+                    "Może to być obracająca się głowica (360°) lub układ luster kierujący wiązkami w różne strony.",
+              ),
+              SizedBox(height: 20),
+              PointListWidget(
+                title: "Jednostka obliczeniowa",
+                description:
+                    "Analizuje czas powrotu impulsów i tworzy trójwymiarowy obraz sceny.",
+              ),
+
+              SizedBox(height: 20),
+              SectionTitle(title: "Jak działa LIDAR?"),
+              SizedBox(height: 20),
+              NumberListWidget(
+                number: 1,
+                title: "Wysłanie impulsu światła",
+                description:
+                    "LIDAR wysyła setki tysięcy (a nawet miliony) krótkich impulsów laserowych w ciągu sekundy.",
+              ),
+
+              SizedBox(height: 20),
+              NumberListWidget(
+                number: 2,
+                title: "Odbicie od obiektu",
+                description:
+                    "Gdy impuls trafi na pieszych, samochody, znaki czy budynki - odbija się i wraca do detektora.",
+              ),
+              SizedBox(height: 20),
+              NumberListWidget(
+                number: 3,
+                title: "Pomiar czasu powrotu",
+                description:
+                    "System mierzy, ile czasu minęło od wysłania impulsu do jego powrotu. Ponieważ światło ma ogromną prędkość, pomiary są niezwykle precyzyjne.",
+              ),
+              SizedBox(height: 20),
+              NumberListWidget(
+                number: 4,
+                title: "Tworzenie mapy 3D",
+                description:
+                    "Każdy pomiar to jeden punkt w przestrzeni. Setki tysięcy punktów tworzą chmurę punktów, czyli trójwymiarowy obraz całego otoczenia.",
+              ),
+
+              SizedBox(height: 20),
+              SectionTitle(title: "Czym jest LIDAR?"),
+              SizedBox(height: 20),
+              MainTextWidget(
+                children: [
+                  const TextSpan(text: "Dzięki wysokiej rozdzielczości LIDAR:"),
+                ],
+              ),
+              SizedBox(height: 10),
+              BulletPointLesson(text: "rozpoznaje sylwetki pieszych,"),
+              SizedBox(height: 10),
+              BulletPointLesson(
+                text:
+                    "dostrzega niewielkie przeszkody na drodze (np. rower, pies, pachołek),",
+              ),
+              SizedBox(height: 10),
+              BulletPointLesson(
+                text: "potrafi określić kształt i rozmiar obiektu",
+              ),
+              SizedBox(height: 10),
+              BulletPointLesson(
+                text: "tworzy dokładny model sceny nawet w dynamicznym ruchu.",
+              ),
+              SizedBox(height: 20),
+              MainTextWidget(
+                color: Colors.grey[600],
+                children: [
+                  const TextSpan(
+                    text:
+                        "To sprawia, że LIDAR jest jednym z najważniejszych sensorów w scenariuszach, gdzie bezpieczeństwo pieszych ma kluczowe znaczenie.",
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+
+              SectionTitle(title: "Zalety LIDARU w autonomicznych pojazdach"),
+              SizedBox(height: 10),
+              TextIconWidget(
+                icon: Icons.check_circle_outline,
+                text: "Bardzo wysoka dokładność pomiarów.",
+              ),
+              SizedBox(height: 5),
+              TextIconWidget(
+                icon: Icons.pin_drop_outlined,
+                text: "Szczegółowa mapa 3D otoczenia.",
+              ),
+              SizedBox(height: 5),
+              TextIconWidget(
+                icon: Icons.remove_red_eye_outlined,
+                text:
+                    "Niezależność od cieni, odbić i warunków oświetleniowych.",
+              ),
+              SizedBox(height: 5),
+              TextIconWidget(
+                icon: Icons.person_outline,
+                text:
+                    "Świetne wykrywanie krawędzi, pieszych i małych przeszkód.",
+              ),
+              SizedBox(height: 5),
+              TextIconWidget(
+                icon: Icons.route_outlined,
+                text: "Ułatwia planowanie trasy i unikanie kolizji.",
+              ),
+              SizedBox(height: 20),
+              LessonNavigationButtons(),
+              SizedBox(height: 40),
             ],
           ),
         ),

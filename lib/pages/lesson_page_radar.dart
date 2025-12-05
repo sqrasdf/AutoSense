@@ -1,16 +1,11 @@
-import 'package:autosense/lesson_widgets/info_panel.dart';
-import 'package:autosense/lesson_widgets/intro_panel.dart';
 import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
-import 'package:autosense/lesson_widgets/main_text_lesson.dart';
+import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/numer_list_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
-import 'package:autosense/lesson_widgets/table_radar_lidar_camera.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
-import 'package:autosense/lesson_widgets/waves_card.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class LessonPageRadar extends StatefulWidget {
   const LessonPageRadar({super.key});
