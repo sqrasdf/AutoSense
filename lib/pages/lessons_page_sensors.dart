@@ -1,3 +1,4 @@
+import 'package:autosense/pages/lesson_page_camera.dart';
 import 'package:autosense/pages/lesson_page_lidar.dart';
 import 'package:autosense/pages/lesson_page_radar.dart';
 import 'package:autosense/widgets/sensor_card.dart';
@@ -46,7 +47,7 @@ class LessonsPageSensors extends StatelessWidget {
                 title: "Kamera",
                 description:
                     "Rozpoznawanie pasów ruchu, znaków drogowych i świateł. Analiza obrazu w czasie rzeczywistym.",
-                lesson: LessonPageRadar(),
+                lesson: LessonPageCamera(),
               ),
               SizedBox(height: 20),
               SensorCard(

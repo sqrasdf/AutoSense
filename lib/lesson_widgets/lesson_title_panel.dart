@@ -22,27 +22,29 @@ class LessonTitlePanel extends StatelessWidget {
             child: Icon(Icons.arrow_back),
           ),
           SizedBox(width: 25),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14),
-                  color: Colors.grey.shade300,
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: Colors.grey.shade300,
+                  ),
+                  padding: EdgeInsets.fromLTRB(8, 5, 8, 5),
+                  child: Text(
+                    "Lekcja $lessonNumber",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                  ),
                 ),
-                padding: EdgeInsets.fromLTRB(8, 5, 8, 5),
-                child: Text(
-                  "Lekcja $lessonNumber",
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                SizedBox(height: 10),
+                Text(
+                  title,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                title,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
