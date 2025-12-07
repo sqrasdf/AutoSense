@@ -1,6 +1,7 @@
 import 'package:autosense/pages/lesson_page_camera.dart';
 import 'package:autosense/pages/lesson_page_lidar.dart';
 import 'package:autosense/pages/lesson_page_radar.dart';
+import 'package:autosense/pages/lesson_page_ultrasounds.dart';
 import 'package:autosense/widgets/sensor_card.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +58,7 @@ class LessonsPageSensors extends StatelessWidget {
                 title: "Ultradźwięki",
                 description:
                     "Systemy parkowaniai wykrywanie obiektów w bliskim otoczeniu pojazdu. Pracyzja do centymetra.",
-                lesson: LessonPageRadar(),
+                lesson: LessonPageUltrasound(),
               ),
             ],
           ),

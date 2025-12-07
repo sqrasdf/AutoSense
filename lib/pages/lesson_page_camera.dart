@@ -18,11 +18,9 @@ class LessonPageCamera extends StatefulWidget {
 class _LessonPageCameraState extends State<LessonPageCamera> {
   @override
   Widget build(BuildContext context) {
-    const double horizontalPadding = 25;
-
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
+        padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 25),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +39,7 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
                 children: [
                   const TextSpan(
                     text:
-                        "Kamery to „oczy” autonomicznego pojazdu. Dostarczają szczegółowego obrazu otoczenia i pozwalają wykrywać elementy, których radar czy LIDAR nie widzą tak dobrze – zwłaszcza kolorów, kształtów, napisów i drobnych detali.",
+                        "Kamery to „oczy” autonomicznego pojazdu. Dostarczają szczegółowego obrazu otoczenia i pozwalają wykrywać elementy, których radar czy LIDAR nie widzą tak dobrze - zwłaszcza kolorów, kształtów, napisów i drobnych detali.",
                   ),
                 ],
               ),
@@ -103,7 +101,7 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
               PointListWidget(
                 title: "Matryca (sensor)",
                 description:
-                    "Przekształca światło na sygnał elektryczny – powstaje obraz.",
+                    "Przekształca światło na sygnał elektryczny - powstaje obraz.",
               ),
               SizedBox(height: 10),
               PointListWidget(
@@ -183,7 +181,7 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
                 children: [
                   const TextSpan(
                     text:
-                        "Tylko kamera potrafi odczytać kolor, kształt i symbol – co jest niezbędne do identyfikacji znaków.",
+                        "Tylko kamera potrafi odczytać kolor, kształt i symbol - co jest niezbędne do identyfikacji znaków.",
                   ),
                 ],
               ),
