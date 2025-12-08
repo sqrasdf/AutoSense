@@ -1,7 +1,7 @@
-import 'package:autosense/pages/lesson_page_camera.dart';
-import 'package:autosense/pages/lesson_page_lidar.dart';
-import 'package:autosense/pages/lesson_page_radar.dart';
-import 'package:autosense/pages/lesson_page_ultrasounds.dart';
+import 'package:autosense/pages/1_sensors/lesson_page_camera.dart';
+import 'package:autosense/pages/1_sensors/lesson_page_lidar.dart';
+import 'package:autosense/pages/1_sensors/lesson_page_radar.dart';
+import 'package:autosense/pages/1_sensors/lesson_page_ultrasounds.dart';
 import 'package:autosense/widgets/sensor_card.dart';
 import 'package:flutter/material.dart';
 

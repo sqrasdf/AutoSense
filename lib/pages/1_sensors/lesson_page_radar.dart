@@ -11,10 +11,10 @@ class LessonPageRadar extends StatefulWidget {
   const LessonPageRadar({super.key});
 
   @override
-  State<LessonPageRadar> createState() => _TopicPageState();
+  State<LessonPageRadar> createState() => _LessonPageState();
 }
 
-class _TopicPageState extends State<LessonPageRadar> {
+class _LessonPageState extends State<LessonPageRadar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
