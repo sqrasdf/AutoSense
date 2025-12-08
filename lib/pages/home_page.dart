@@ -1,4 +1,5 @@
-import 'package:autosense/pages/lessons_page_sensors.dart';
+import 'package:autosense/pages/1_sensors/lessons_page_sensors.dart';
+import 'package:autosense/pages/2_strategies/lessons_page_strategies.dart';
 import 'package:autosense/widgets/auto_sense_panel.dart';
 import 'package:autosense/widgets/module_card.dart';
 import 'package:autosense/widgets/progress_bar.dart';
@@ -51,12 +52,18 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20),
               ModuleCard(
-                icon: Icons.scatter_plot,
+                icon: Icons.swap_calls,
                 title: 'Strategie jazdy autonomicznej',
                 subtitle:
                     'Algorytmy podejmowania decyzji (omijanie, hamowanie)',
                 onTap: () {
                   debugPrint('Otwieram Strategie jazdy autonomicznej');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LessonsPageStrategies(),
+                    ),
+                  );
                 },
               ),
               const SizedBox(height: 20),

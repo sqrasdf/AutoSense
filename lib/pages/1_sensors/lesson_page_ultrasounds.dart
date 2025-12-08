@@ -32,8 +32,7 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               const Divider(),
               const SizedBox(height: 10),
 
-              // 1. Wprowadzenie
-              SectionTitle(title: "1. Wprowadzenie"),
+              SectionTitle(title: "Wprowadzenie"),
               const SizedBox(height: 20),
               MainTextWidget(
                 children: [
@@ -58,7 +57,7 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               ),
               const SizedBox(height: 20),
 
-              SectionTitle(title: "2. Czym są czujniki ultradźwiękowe?"),
+              SectionTitle(title: "Czym są czujniki ultradźwiękowe?"),
               const SizedBox(height: 20),
               MainTextWidget(
                 children: [
@@ -99,9 +98,7 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               ),
               const SizedBox(height: 20),
 
-              SectionTitle(
-                title: "3. Z czego składa się czujnik ultradźwiękowy?",
-              ),
+              SectionTitle(title: "Z czego składa się czujnik ultradźwiękowy?"),
               const SizedBox(height: 20),
               PointListWidget(
                 title: "Nadajnik",
@@ -127,9 +124,7 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               ),
               const SizedBox(height: 20),
 
-              SectionTitle(
-                title: "4. Jak działają ultradźwięki? - krok po kroku",
-              ),
+              SectionTitle(title: "Jak działają ultradźwięki? - krok po kroku"),
               const SizedBox(height: 20),
 
               NumberListWidget(
@@ -168,7 +163,7 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               ),
               const SizedBox(height: 20),
 
-              SectionTitle(title: "5. Ultradźwięki w systemach parkowania"),
+              SectionTitle(title: "Ultradźwięki w systemach parkowania"),
               const SizedBox(height: 20),
               MainTextWidget(
                 children: [const TextSpan(text: "Jak pomagają?")],
@@ -197,7 +192,7 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               ]),
               const SizedBox(height: 20),
 
-              SectionTitle(title: "6. Zalety ultradźwięków"),
+              SectionTitle(title: "Zalety ultradźwięków"),
               const SizedBox(height: 20),
               TextIconWidget(
                 icon: Icons.directions_car_filled_outlined,

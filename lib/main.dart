@@ -1,9 +1,4 @@
-// ignore_for_file: unused_import
-
 import 'package:autosense/pages/home_page.dart';
-import 'package:autosense/pages/settings_page.dart';
-import 'package:autosense/pages/topic_page.dart';
-import 'package:autosense/widgets/auto_sense_panel.dart';
 import 'package:flutter/material.dart';
 
 void main() {
