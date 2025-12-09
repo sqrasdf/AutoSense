@@ -1,10 +1,7 @@
-import 'package:autosense/pages/1_sensors/lesson_page_camera.dart';
-import 'package:autosense/pages/1_sensors/lesson_page_lidar.dart';
-import 'package:autosense/pages/1_sensors/lesson_page_radar.dart';
-import 'package:autosense/pages/1_sensors/lesson_page_ultrasounds.dart';
 import 'package:autosense/pages/2_strategies/lesson_page_algorithms.dart';
+import 'package:autosense/pages/2_strategies/lesson_page_examples.dart';
+import 'package:autosense/pages/2_strategies/lesson_page_scenarios.dart';
 import 'package:autosense/pages/2_strategies/strategy_card.dart';
-import 'package:autosense/widgets/sensor_card.dart';
 import 'package:flutter/material.dart';
 
 class LessonsPageStrategies extends StatelessWidget {
@@ -40,7 +37,7 @@ class LessonsPageStrategies extends StatelessWidget {
                 title: "Przykłady strategii jazdy",
                 description:
                     "Przegląd praktycznych manewrów, prezentujący działanie algorytmów w realnych sytuacjach drogowych.",
-                lesson: Container(),
+                lesson: LessonPageExamples(),
               ),
               SizedBox(height: 20),
               StrategyCard(
@@ -49,7 +46,7 @@ class LessonsPageStrategies extends StatelessWidget {
                 title: "Scenariusze interaktywne",
                 description:
                     "Analiza procesu, w którym pojazd wykrywa przeszkodę i wybiera najbezpieczniejszą ścieżkę jej ominięcia.",
-                lesson: Container(),
+                lesson: LessonPageScenarios(),
               ),
               SizedBox(height: 20),
             ],
