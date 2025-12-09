@@ -10,7 +10,7 @@ class LessonPageExamples extends StatefulWidget {
   const LessonPageExamples({super.key});
 
   @override
-  State<LessonPageExamples> createState() => _LessonPageScenariosState();
+  State<LessonPageExamples> createState() => _LessonPageExamplesState();
 }
 
 class SummaryRow {
@@ -24,7 +24,7 @@ class SummaryRow {
   });
 }
 
-class _LessonPageScenariosState extends State<LessonPageExamples> {
+class _LessonPageExamplesState extends State<LessonPageExamples> {
   // Model dla wiersza w tabeli podsumowującej
 
   final List<SummaryRow> summaryData = [
@@ -58,7 +58,7 @@ class _LessonPageScenariosState extends State<LessonPageExamples> {
             children: [
               LessonTitlePanel(
                 title: "Przykłady Zachowania Pojazdu Autonomicznego",
-                lessonNumber: 5,
+                lessonNumber: 6,
               ),
               const SizedBox(height: 5),
               const Divider(),

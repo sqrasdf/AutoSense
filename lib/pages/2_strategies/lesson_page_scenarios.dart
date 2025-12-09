@@ -79,7 +79,7 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
             children: [
               LessonTitlePanel(
                 title: "Co zrobi pojazd? - wybierz poprawne działanie AI",
-                lessonNumber: 6,
+                lessonNumber: 7,
               ),
               const SizedBox(height: 5),
               const Divider(),
