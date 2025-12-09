@@ -95,7 +95,7 @@ class _LessonPageDecisionMakingState extends State<LessonPageAlgorithms> {
               ),
               const SizedBox(height: 20),
 
-              SectionTitle(title: "Decision Trees – drzewa decyzyjne"),
+              SectionTitle(title: "Decision Trees - drzewa decyzyjne"),
               const SizedBox(height: 20),
               MainTextWidget(
                 children: [
