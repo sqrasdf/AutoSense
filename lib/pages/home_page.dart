@@ -1,5 +1,6 @@
 import 'package:autosense/pages/1_sensors/lessons_page_sensors.dart';
 import 'package:autosense/pages/2_strategies/lessons_page_strategies.dart';
+import 'package:autosense/pages/3_fusion/lessons_page_fusion.dart';
 import 'package:autosense/widgets/auto_sense_panel.dart';
 import 'package:autosense/widgets/module_card.dart';
 import 'package:autosense/widgets/progress_bar.dart';
@@ -74,6 +75,12 @@ class _HomePageState extends State<HomePage> {
                     'Dowiedz się jak system łączy dane z różnych czujników',
                 onTap: () {
                   debugPrint('Otwieram Fuzję danych');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LessonsPageFusion(),
+                    ),
+                  );
                 },
               ),
               const SizedBox(height: 20),
