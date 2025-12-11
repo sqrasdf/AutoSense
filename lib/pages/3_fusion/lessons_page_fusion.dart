@@ -1,5 +1,6 @@
 import 'package:autosense/pages/3_fusion/fusion_card.dart';
 import 'package:autosense/pages/3_fusion/lesson_page_fusion_basics.dart';
+import 'package:autosense/pages/3_fusion/lesson_page_fusion_example.dart';
 import 'package:flutter/material.dart';
 
 class LessonsPageFusion extends StatelessWidget {
@@ -33,7 +34,7 @@ class LessonsPageFusion extends StatelessWidget {
                     "Przykład fuzji LIDAR + Kamera dla dokładniejszego rozpoznanie obiektów",
                 description:
                     "Omówienie praktycznego scenariusza i wizualizacji - nakładanie obrazów i „kolorowanie” punktów z LIDARu.",
-                lesson: Scaffold(),
+                lesson: LessonPageFusionExample(),
               ),
               SizedBox(height: 20),
               FusionCard(

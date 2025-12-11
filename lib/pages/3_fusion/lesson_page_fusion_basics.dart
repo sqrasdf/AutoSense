@@ -1,7 +1,6 @@
 import 'package:autosense/lesson_widgets/bullet_point_lesson.dart';
 import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
 import 'package:autosense/lesson_widgets/main_text_widget.dart';
-import 'package:autosense/lesson_widgets/numer_list_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
