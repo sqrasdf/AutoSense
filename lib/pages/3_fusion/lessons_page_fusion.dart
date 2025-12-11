@@ -1,4 +1,5 @@
 import 'package:autosense/pages/3_fusion/fusion_card.dart';
+import 'package:autosense/pages/3_fusion/lesson_page_fusion_basics.dart';
 import 'package:flutter/material.dart';
 
 class LessonsPageFusion extends StatelessWidget {
@@ -22,7 +23,7 @@ class LessonsPageFusion extends StatelessWidget {
                 title: "Podstawy i cele fuzji danych",
                 description:
                     "Wyjaśnienie dlaczego łączy się dane z wielu sensorów i jakie problemy to rozwiązuje",
-                lesson: Scaffold(),
+                lesson: LessonPageFusionBasics(),
               ),
               SizedBox(height: 20),
               FusionCard(
@@ -39,7 +40,7 @@ class LessonsPageFusion extends StatelessWidget {
                 icon: Icons.auto_graph,
                 iconBackgroundColor: Colors.blue,
                 title:
-                    "Metody fuzji: filtr Kalmana, Deep Learning, 3D–2D Matching",
+                    "Metody fuzji: filtr Kalmana, Deep Learning, 3D-2D Matching",
                 description:
                     "Zrozumienie, jak technicznie łączy się dane, z przykładami działania.",
                 lesson: Scaffold(),

@@ -187,7 +187,7 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
               PointListWidget(
                 title: "Możliwe reakcje AI",
                 description:
-                    "Zwykle 2–4 opcje do wyboru, np.: zahamować, zmienić pas, utrzymać prędkość, zatrzymać się i poczekać.",
+                    "Zwykle 2-4 opcje do wyboru, np.: zahamować, zmienić pas, utrzymać prędkość, zatrzymać się i poczekać.",
               ),
               SizedBox(height: 10),
               SizedBox(height: 10),
@@ -199,7 +199,7 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
               const SizedBox(height: 20),
 
               SectionTitle(
-                title: "Jak analizować taki scenariusz? – krok po kroku",
+                title: "Jak analizować taki scenariusz? - krok po kroku",
               ),
               const SizedBox(height: 20),
               NumberListWidget(
