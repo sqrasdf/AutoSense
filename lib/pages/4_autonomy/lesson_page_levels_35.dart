@@ -106,8 +106,8 @@ class _LessonPageLevels35State extends State<LessonPageLevels35> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               LessonTitlePanel(
-                title: "Poziomy 3–5: jazda autonomiczna i pełna autonomia",
-                lessonNumber: 11,
+                title: "Poziomy 3-5: jazda autonomiczna i pełna autonomia",
+                lessonNumber: 12,
               ),
               const SizedBox(height: 5),
               const Divider(),
@@ -355,16 +355,13 @@ class _LessonPageLevels35State extends State<LessonPageLevels35> {
                   ),
                 ],
               ),
-              // [MIEJSCE NA ANIMACJĘ - Auto bez kierownicy w trudnych warunkach]
               const SizedBox(height: 20),
 
-              // Podsumowanie różnic
               SectionTitle(title: "Podsumowanie różnic"),
               const SizedBox(height: 20),
               _buildSummaryTable(),
               const SizedBox(height: 20),
 
-              // Przyciski nawigacyjne
               const LessonNavigationButtons(),
               const SizedBox(height: 40),
             ],

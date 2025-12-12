@@ -1,6 +1,7 @@
 import 'package:autosense/pages/4_autonomy/autonomy_card.dart';
 import 'package:autosense/pages/4_autonomy/lesson_page_autonomy_intro.dart';
 import 'package:autosense/pages/4_autonomy/lesson_page_levels_35.dart';
+import 'package:autosense/pages/4_autonomy/lesson_page_real_world_exmples.dart';
 import 'package:flutter/material.dart';
 
 class LessonsPageAutonomy extends StatelessWidget {
@@ -46,7 +47,7 @@ class LessonsPageAutonomy extends StatelessWidget {
                 title: "Przykłady realnych aut + Quiz interaktywny",
                 description:
                     "Przypisanie realnych modeli (Tesla, Waymo, Mercedes EQ), oraz quiz: „Jaki to poziom autonomii?”.",
-                lesson: Scaffold(),
+                lesson: LessonPageRealWorldExamples(),
               ),
               SizedBox(height: 20),
             ],
