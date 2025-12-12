@@ -1,6 +1,7 @@
 import 'package:autosense/pages/3_fusion/fusion_card.dart';
 import 'package:autosense/pages/3_fusion/lesson_page_fusion_basics.dart';
 import 'package:autosense/pages/3_fusion/lesson_page_fusion_example.dart';
+import 'package:autosense/pages/3_fusion/lesson_page_kalman_deep_learning.dart';
 import 'package:flutter/material.dart';
 
 class LessonsPageFusion extends StatelessWidget {
@@ -44,7 +45,7 @@ class LessonsPageFusion extends StatelessWidget {
                     "Metody fuzji: filtr Kalmana, Deep Learning, 3D-2D Matching",
                 description:
                     "Zrozumienie, jak technicznie łączy się dane, z przykładami działania.",
-                lesson: Scaffold(),
+                lesson: LessonPageKalmanDeepLearning(),
               ),
               SizedBox(height: 20),
             ],
