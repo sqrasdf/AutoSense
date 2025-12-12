@@ -1,4 +1,6 @@
 import 'package:autosense/pages/4_autonomy/autonomy_card.dart';
+import 'package:autosense/pages/4_autonomy/lesson_page_autonomy_intro.dart';
+import 'package:autosense/pages/4_autonomy/lesson_page_levels_35.dart';
 import 'package:flutter/material.dart';
 
 class LessonsPageAutonomy extends StatelessWidget {
@@ -22,10 +24,11 @@ class LessonsPageAutonomy extends StatelessWidget {
               AutonomyCard(
                 icon: Icons.settings,
                 iconBackgroundColor: Colors.lightBlueAccent,
-                title: "Czym są poziomy autonomii? (SAE J3016)",
+                title:
+                    "Czym są poziomy autonomii? (SAE J3016) - poziomy 0 do 2 ",
                 description:
                     "Wprowadzenie do warstwy decyzyjnej pojazdu autonomicznego, która określa, jak system wybiera kolejne działania.",
-                lesson: Scaffold(),
+                lesson: LessonPageAutonomyIntro(),
               ),
               SizedBox(height: 20),
               AutonomyCard(
@@ -34,7 +37,7 @@ class LessonsPageAutonomy extends StatelessWidget {
                 title: "Poziomy 3-5: jazda autonomiczna i pełna autonomia",
                 description:
                     "Wyjaśnienie czym różnią się tryby „warunkowej”, „wysokiej” i „pełnej” autonomii.",
-                lesson: Scaffold(),
+                lesson: LessonPageLevels35(),
               ),
               SizedBox(height: 20),
               AutonomyCard(
