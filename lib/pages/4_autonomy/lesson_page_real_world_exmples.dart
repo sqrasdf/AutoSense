@@ -4,37 +4,8 @@ import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
+import 'package:autosense/widgets/comparison_table.dart';
 import 'package:flutter/material.dart';
-
-Widget _buildTableHeaderCell(String text) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Center(
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 14,
-          color: Colors.black,
-        ),
-      ),
-    ),
-  );
-}
-
-Widget _buildTableCell(String text, {bool isBold = false}) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Text(
-      text,
-      style: TextStyle(
-        fontSize: 14,
-        color: Colors.black,
-        fontWeight: isBold ? FontWeight.w600 : FontWeight.normal,
-      ),
-    ),
-  );
-}
 
 class LessonPageRealWorldExamples extends StatefulWidget {
   const LessonPageRealWorldExamples({super.key});
@@ -50,54 +21,49 @@ class _LessonPageRealWorldExamplesState
     return Table(
       border: TableBorder.all(color: Colors.grey[300]!, width: 1.0),
       columnWidths: const {
-        0: FlexColumnWidth(1.8), // Marka/System
-        1: FlexColumnWidth(1.0), // Poziom SAE
-        2: FlexColumnWidth(3.5), // Co potrafi?
+        0: FlexColumnWidth(1.8),
+        1: FlexColumnWidth(1.0),
+        2: FlexColumnWidth(3.5),
       },
       children: [
-        // Nagłówek
         TableRow(
           decoration: BoxDecoration(color: Colors.grey[100]),
           children: [
-            _buildTableHeaderCell('Marka / System'),
-            _buildTableHeaderCell('Poziom SAE'),
-            _buildTableHeaderCell('Co potrafi?'),
+            buildTableHeaderCell('Marka / System'),
+            buildTableHeaderCell('Poziom SAE'),
+            buildTableHeaderCell('Co potrafi?'),
           ],
         ),
-        // Tesla
         TableRow(
           children: [
-            _buildTableCell('Tesla FSD / Autopilot', isBold: true),
-            _buildTableCell('2'),
-            _buildTableCell('jazda częściowo autonomiczna, kierowca nadzoruje'),
+            buildTableCell('Tesla FSD / Autopilot', isBold: true),
+            buildTableCell('2'),
+            buildTableCell('jazda częściowo autonomiczna, kierowca nadzoruje'),
           ],
         ),
-        // Mercedes Drive Pilot
         TableRow(
           children: [
-            _buildTableCell('Mercedes Drive Pilot', isBold: true),
-            _buildTableCell('3'),
-            _buildTableCell(
+            buildTableCell('Mercedes Drive Pilot', isBold: true),
+            buildTableCell('3'),
+            buildTableCell(
               'jazda autonomiczna w ograniczonych warunkach, bez nadzoru wzrokowego',
             ),
           ],
         ),
-        // Waymo Robotaxi
         TableRow(
           children: [
-            _buildTableCell('Waymo Robotaxi', isBold: true),
-            _buildTableCell('4'),
-            _buildTableCell(
+            buildTableCell('Waymo Robotaxi', isBold: true),
+            buildTableCell('4'),
+            buildTableCell(
               'pełna jazda autonomiczna bez kierowcy, w określonych strefach',
             ),
           ],
         ),
-        // Poziom 5
         TableRow(
           children: [
-            _buildTableCell('Brak przykładów', isBold: true),
-            _buildTableCell('5'),
-            _buildTableCell('poziom 5 nie istnieje jeszcze komercyjnie'),
+            buildTableCell('Brak przykładów', isBold: true),
+            buildTableCell('5'),
+            buildTableCell('poziom 5 nie istnieje jeszcze komercyjnie'),
           ],
         ),
       ],
