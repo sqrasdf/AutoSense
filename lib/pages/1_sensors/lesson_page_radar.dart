@@ -15,12 +15,56 @@ class LessonPageRadar extends StatefulWidget {
 }
 
 class _LessonPageState extends State<LessonPageRadar> {
+  late ScrollController _scrollController;
+  bool _isLessonCompleted = false;
+  final double _completionThreshold = 0.90;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(_checkScrollCompletion);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_checkScrollCompletion);
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _checkScrollCompletion() {
+    if (!_scrollController.hasClients) return;
+
+    final double maxScroll = _scrollController.position.maxScrollExtent;
+    final double currentScroll = _scrollController.offset;
+
+    if (maxScroll > 0) {
+      final double scrollProgress = currentScroll / maxScroll;
+
+      if (scrollProgress >= _completionThreshold && !_isLessonCompleted) {
+        setState(() {
+          _isLessonCompleted = true;
+        });
+
+        // TODO: Implemement Saving State with Provider
+        // Provider.of<LearningProgressModel>(context, listen: false)
+        //     .completeLesson(widget.lessonId);
+
+        _scrollController.removeListener(_checkScrollCompletion);
+
+        debugPrint('LEKCJA UKOŃCZONA!');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 25),
         child: SingleChildScrollView(
+          controller: _scrollController,
           child: Column(
             children: [
               LessonTitlePanel(
