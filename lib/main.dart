@@ -1,7 +1,30 @@
+import 'package:autosense/firebase_options.dart';
 import 'package:autosense/pages/home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> _signInAnonymously() async {
+  try {
+    if (FirebaseAuth.instance.currentUser == null) {
+      await FirebaseAuth.instance.signInAnonymously();
+      debugPrint(
+        "Zalogowano anonimowo jako: ${FirebaseAuth.instance.currentUser!.uid}",
+      );
+    } else {
+      debugPrint(
+        "Użytkownik już zalogowany jako: ${FirebaseAuth.instance.currentUser!.uid}",
+      );
+    }
+  } on FirebaseAuthException catch (e) {
+    debugPrint("Logowanie anonimowe nie powiodło się: ${e.code}");
+  }
+}
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await _signInAnonymously();
   runApp(const MyApp());
 }
 

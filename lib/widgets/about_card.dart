@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AboutCard extends StatelessWidget {
@@ -53,6 +54,18 @@ class AboutCard extends StatelessWidget {
             style: TextStyle(
               fontSize: 14,
               color: Color(0xFF5A5A5A),
+              height: 1.3,
+            ),
+          ),
+
+          const SizedBox(height: 12),
+
+          Text(
+            "UID: ${FirebaseAuth.instance.currentUser!.uid}",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 14,
+              color: Color.fromARGB(255, 130, 130, 130),
               height: 1.3,
             ),
           ),
