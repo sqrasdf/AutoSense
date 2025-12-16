@@ -5,6 +5,7 @@ import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
 class LessonPageRadar extends StatefulWidget {
@@ -33,7 +34,7 @@ class _LessonPageState extends State<LessonPageRadar> {
     super.dispose();
   }
 
-  void _checkScrollCompletion() {
+  Future<void> _checkScrollCompletion() async {
     if (!_scrollController.hasClients) return;
 
     final double maxScroll = _scrollController.position.maxScrollExtent;
@@ -46,6 +47,9 @@ class _LessonPageState extends State<LessonPageRadar> {
         setState(() {
           _isLessonCompleted = true;
         });
+
+        await saveLessonCompletionByIndex(0, 13);
+        // await saveLessonCompletion("1");
 
         // TODO: Implemement Saving State with Provider
         // Provider.of<LearningProgressModel>(context, listen: false)
