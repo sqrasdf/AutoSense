@@ -59,7 +59,7 @@ class _LessonPageState extends State<LessonPageRadar> {
 
         _scrollController.removeListener(_checkScrollCompletion);
 
-        debugPrint('LEKCJA UKOŃCZONA!');
+        debugPrint('LEKCJA $lessonNumber UKOŃCZONA!');
       }
     }
   }
