@@ -20,6 +20,8 @@ class _LessonPageState extends State<LessonPageRadar> {
   bool _isLessonCompleted = false;
   final double _completionThreshold = 0.90;
 
+  int lessonNumber = 1;
+
   @override
   void initState() {
     super.initState();
@@ -48,7 +50,7 @@ class _LessonPageState extends State<LessonPageRadar> {
           _isLessonCompleted = true;
         });
 
-        await saveLessonCompletionByIndex(0, 13);
+        await saveLessonCompletionByIndex(lessonNumber - 1, 13);
         // await saveLessonCompletion("1");
 
         // TODO: Implemement Saving State with Provider
@@ -73,7 +75,7 @@ class _LessonPageState extends State<LessonPageRadar> {
             children: [
               LessonTitlePanel(
                 title: "Podstawy działania radarów",
-                lessonNumber: 1,
+                lessonNumber: lessonNumber,
               ),
               SizedBox(height: 5),
               Divider(),

@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20),
               ProgressBar(
-                progress: 0.12,
+                // progress: 0.12,
                 completedModules: 3,
                 totalModules: 25,
               ),
