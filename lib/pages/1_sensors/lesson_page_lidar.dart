@@ -71,6 +71,7 @@ class _LessonPageState extends State<LessonPageLidar> {
       body: Padding(
         padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 20),
         child: SingleChildScrollView(
+          controller: _scrollController,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
