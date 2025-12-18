@@ -52,11 +52,6 @@ class _LessonPageState extends State<LessonPageLidar> {
         });
 
         await saveLessonCompletionByIndex(lessonNumber - 1, 13);
-        // await saveLessonCompletion("1");
-
-        // TODO: Implemement Saving State with Provider
-        // Provider.of<LearningProgressModel>(context, listen: false)
-        //     .completeLesson(widget.lessonId);
 
         _scrollController.removeListener(_checkScrollCompletion);
 
