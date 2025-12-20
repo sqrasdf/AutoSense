@@ -15,10 +15,16 @@ class AutoSensePanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const CircleAvatar(
-          backgroundColor: Color(0xFFE0F0FF),
-          radius: 30,
-          child: Icon(Icons.sensors, color: Colors.blueAccent, size: 35),
+        Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 48, 146, 243),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Center(
+            child: Icon(Icons.radar, color: Colors.white, size: 36),
+          ),
         ),
         const SizedBox(width: 20),
         Expanded(
@@ -52,7 +58,7 @@ class AutoSensePanel extends StatelessWidget {
               },
               child: const CircleAvatar(
                 backgroundColor: Color(0xFFE0F0FF),
-                radius: 20,
+                radius: 24,
                 child: Icon(
                   Icons.person_outline,
                   color: Colors.blueAccent,
