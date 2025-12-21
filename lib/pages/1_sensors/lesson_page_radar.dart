@@ -213,7 +213,7 @@ class _LessonPageState extends State<LessonPageRadar> {
                     "Współpracuje z kamerą i lidarem, tworząc kompletny obraz otoczenia.",
               ),
               SizedBox(height: 20),
-              LessonNavigationButtons(),
+              LessonNavigationButtons(nextPageWidget: LessonPageRadar()),
               SizedBox(height: 40),
             ],
           ),

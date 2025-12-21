@@ -1,7 +1,9 @@
+import 'package:autosense/pages/1_sensors/lesson_page_radar.dart';
 import 'package:flutter/material.dart';
 
 class LessonNavigationButtons extends StatelessWidget {
-  const LessonNavigationButtons({super.key});
+  final Widget? nextPageWidget;
+  const LessonNavigationButtons({super.key, this.nextPageWidget});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,13 @@ class LessonNavigationButtons extends StatelessWidget {
             ),
             child: ElevatedButton(
               onPressed: () {
-                print("przejście do następnej lekcji");
+                debugPrint("przejście do następnej lekcji");
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => nextPageWidget ?? LessonPageRadar(),
+                  ),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor:
