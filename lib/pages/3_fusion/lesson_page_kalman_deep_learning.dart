@@ -4,6 +4,7 @@ import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
+import 'package:autosense/pages/4_autonomy/lesson_page_autonomy_intro.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -424,7 +425,9 @@ class _LessonPageKalmanDeepLearningState
               ),
               const SizedBox(height: 20),
 
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageAutonomyIntro(),
+              ),
               const SizedBox(height: 40),
             ],
           ),

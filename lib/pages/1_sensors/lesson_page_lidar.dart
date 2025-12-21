@@ -6,6 +6,7 @@ import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/pages/1_sensors/lesson_page_camera.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -255,7 +256,7 @@ class _LessonPageState extends State<LessonPageLidar> {
                 text: "Ułatwia planowanie trasy i unikanie kolizji.",
               ),
               SizedBox(height: 20),
-              LessonNavigationButtons(),
+              LessonNavigationButtons(nextPageWidget: LessonPageCamera()),
               SizedBox(height: 40),
             ],
           ),

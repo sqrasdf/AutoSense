@@ -5,6 +5,7 @@ import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/pages/1_sensors/lesson_page_lidar.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -213,7 +214,7 @@ class _LessonPageState extends State<LessonPageRadar> {
                     "Współpracuje z kamerą i lidarem, tworząc kompletny obraz otoczenia.",
               ),
               SizedBox(height: 20),
-              LessonNavigationButtons(nextPageWidget: LessonPageRadar()),
+              LessonNavigationButtons(nextPageWidget: LessonPageLidar()),
               SizedBox(height: 40),
             ],
           ),

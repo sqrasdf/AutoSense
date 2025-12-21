@@ -5,6 +5,7 @@ import 'package:autosense/lesson_widgets/numer_list_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
+import 'package:autosense/pages/3_fusion/lesson_page_fusion_basics.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -514,7 +515,9 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
               ),
               const SizedBox(height: 20),
 
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageFusionBasics(),
+              ),
               const SizedBox(height: 40),
             ],
           ),

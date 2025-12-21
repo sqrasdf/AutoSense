@@ -4,6 +4,7 @@ import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/pages/4_autonomy/lesson_page_real_world_exmples.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -407,7 +408,9 @@ class _LessonPageLevels35State extends State<LessonPageLevels35> {
               _buildSummaryTable(),
               const SizedBox(height: 20),
 
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageRealWorldExamples(),
+              ),
               const SizedBox(height: 40),
             ],
           ),

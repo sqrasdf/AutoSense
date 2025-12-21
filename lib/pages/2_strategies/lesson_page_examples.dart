@@ -3,6 +3,7 @@ import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
 import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
+import 'package:autosense/pages/2_strategies/lesson_page_scenarios.dart';
 import 'package:autosense/pages/2_strategies/pseudocode_widget.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
@@ -300,7 +301,9 @@ class _LessonPageExamplesState extends State<LessonPageExamples> {
               const SizedBox(height: 20),
 
               // Przyciski nawigacyjne
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageScenarios(),
+              ),
               const SizedBox(height: 40),
             ],
           ),

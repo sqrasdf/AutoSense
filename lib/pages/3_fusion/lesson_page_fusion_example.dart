@@ -5,6 +5,7 @@ import 'package:autosense/lesson_widgets/numer_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/pages/3_fusion/lesson_page_kalman_deep_learning.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -399,7 +400,9 @@ class _LessonPageFusionExampleState extends State<LessonPageFusionExample> {
               ),
               const SizedBox(height: 20),
 
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageKalmanDeepLearning(),
+              ),
               const SizedBox(height: 40),
             ],
           ),

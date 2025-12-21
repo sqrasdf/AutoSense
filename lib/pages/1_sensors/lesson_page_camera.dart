@@ -6,6 +6,7 @@ import 'package:autosense/lesson_widgets/numer_list_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/pages/1_sensors/lesson_page_ultrasounds.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -333,7 +334,9 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
               const SizedBox(height: 20),
 
               // Przyciski nawigacyjne
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageUltrasound(),
+              ),
               const SizedBox(height: 40),
             ],
           ),

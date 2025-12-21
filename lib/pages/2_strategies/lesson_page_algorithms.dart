@@ -6,6 +6,7 @@ import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
 import 'package:autosense/lesson_widgets/bullet_point_lesson.dart';
+import 'package:autosense/pages/2_strategies/lesson_page_examples.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -337,7 +338,9 @@ class _LessonPageDecisionMakingState extends State<LessonPageAlgorithms> {
               ),
               const SizedBox(height: 20),
 
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageExamples(),
+              ),
               const SizedBox(height: 40),
             ],
           ),
