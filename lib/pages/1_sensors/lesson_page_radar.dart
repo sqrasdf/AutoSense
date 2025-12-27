@@ -5,6 +5,7 @@ import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/pages/1_sensors/animations/animation_radar.dart';
 import 'package:autosense/pages/1_sensors/lesson_page_lidar.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
@@ -186,7 +187,10 @@ class _LessonPageState extends State<LessonPageRadar> {
                 description:
                     "Dzięki wielu antenom radar oblicza, pod jakim kątem znajduje się obiekt. W ten sposób tworzy prostą mapę otoczenia przed autem.",
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 30),
+
+              RadarWaveWidget(),
+              const SizedBox(height: 30),
 
               SectionTitle(
                 title: "Dlaczego radar jest ważny w autonomicznych pojazdach?",
