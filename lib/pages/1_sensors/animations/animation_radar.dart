@@ -45,7 +45,8 @@ class _RadarWaveWidgetState extends State<RadarWaveWidget>
       50,
       0.8,
       // "https://e7.pngegg.com/pngimages/978/928/png-clipart-red-sedan-car-door-car-seat-top-view-motor-vehicle-red-car-top-view-orange-car-seat-thumbnail.png",
-      "assets/car3.png",
+      // "assets/car33.png",
+      "assets/car333.png",
     ),
   ];
 
