@@ -6,6 +6,7 @@ import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/text_icon_widget.dart';
+import 'package:autosense/pages/1_sensors/animations/animation_lidar.dart';
 import 'package:autosense/pages/1_sensors/lesson_page_camera.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
@@ -225,6 +226,9 @@ class _LessonPageState extends State<LessonPageLidar> {
                   ),
                 ],
               ),
+              SizedBox(height: 20),
+
+              AnimationLidar(),
               SizedBox(height: 20),
 
               SectionTitle(title: "Zalety LIDARU w autonomicznych pojazdach"),
