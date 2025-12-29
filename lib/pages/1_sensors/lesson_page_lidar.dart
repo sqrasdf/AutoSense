@@ -228,7 +228,18 @@ class _LessonPageState extends State<LessonPageLidar> {
               ),
               SizedBox(height: 20),
 
-              AnimationLidar(),
+              // AnimationLidar(),
+              Container(
+                decoration: BoxDecoration(
+                  // border: Border.all(
+                  //   color: Colors.greenAccent.withOpacity(0.3),
+                  // ),
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.white,
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: const AnimationLidar(),
+              ),
               SizedBox(height: 20),
 
               SectionTitle(title: "Zalety LIDARU w autonomicznych pojazdach"),

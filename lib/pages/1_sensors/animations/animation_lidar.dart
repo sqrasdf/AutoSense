@@ -33,6 +33,9 @@ class _AnimationLidarState extends State<AnimationLidar>
   ui.Image? _movingImage;
   ByteData? _movingPixels;
 
+  // Obrazek środkowy (nadawca)
+  ui.Image? _senderImage;
+
   @override
   void initState() {
     super.initState();
@@ -44,7 +47,7 @@ class _AnimationLidarState extends State<AnimationLidar>
 
     _objectController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 3),
     )..repeat();
 
     _loadImages();
@@ -82,6 +85,19 @@ class _AnimationLidarState extends State<AnimationLidar>
             }
           }, onError: (e, s) => debugPrint("Error loading car4: $e")),
         );
+
+    // Sender car
+    AssetImage("assets/car2.png")
+        .resolve(ImageConfiguration.empty)
+        .addListener(
+          ImageStreamListener((ImageInfo info, bool _) {
+            if (mounted) {
+              setState(() {
+                _senderImage = info.image;
+              });
+            }
+          }, onError: (e, s) => debugPrint("Error loading car2: $e")),
+        );
   }
 
   @override
@@ -96,7 +112,7 @@ class _AnimationLidarState extends State<AnimationLidar>
     return Container(
       height: 350,
       width: double.infinity,
-      color: Colors.grey[200],
+      color: const Color(0xFF333333), // Ciemny asfalt
       child: AnimatedBuilder(
         animation: Listenable.merge([_lidarController, _objectController]),
         builder: (context, child) {
@@ -108,12 +124,11 @@ class _AnimationLidarState extends State<AnimationLidar>
               rotation: rotation,
               objProgress: objProgress,
               pointCloud: _pointCloud,
-
               staticImage: _obstacleImage,
               staticPixels: _obstaclePixels,
-
               movingImage: _movingImage,
               movingPixels: _movingPixels,
+              senderImage: _senderImage,
             ),
             size: Size.infinite,
           );
@@ -134,6 +149,8 @@ class _LidarImagePainter extends CustomPainter {
   final ui.Image? movingImage;
   final ByteData? movingPixels;
 
+  final ui.Image? senderImage;
+
   _LidarImagePainter({
     required this.rotation,
     required this.objProgress,
@@ -142,19 +159,52 @@ class _LidarImagePainter extends CustomPainter {
     this.staticPixels,
     this.movingImage,
     this.movingPixels,
+    this.senderImage,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
-    final maxRange = size.width * 0.45;
+    final maxRange = size.width * 0.55;
+    final laneWidth = size.width / 3;
 
+    // --- 0. RYSOWANIE PASÓW (DASHED LINES) ---
+    final paintLine = Paint()
+      ..color = Colors.white.withAlpha(200)
+      ..style = PaintingStyle.fill;
+
+    List<double> lineXOffsets = [-laneWidth / 2, laneWidth / 2];
+
+    double dashHeight = 30.0;
+    double gapHeight = 20.0;
+    double totalDashPattern = dashHeight + gapHeight;
+
+    // Przesunięcie animacji w dół (szybkie)
+    double dyAnim = ((objProgress * 15) % 1.0) * totalDashPattern;
+
+    double startY = -totalDashPattern;
+    while (startY < size.height + totalDashPattern) {
+      double y = startY + dyAnim;
+      for (double xOff in lineXOffsets) {
+        canvas.drawRect(
+          Rect.fromCenter(
+            center: center + Offset(xOff, y - size.height / 2),
+            width: 4,
+            height: dashHeight,
+          ),
+          paintLine,
+        );
+      }
+      startY += totalDashPattern;
+    }
+
+    // --- 1. DEFINICJA PRZESZKÓD ---
     List<Rect> boxes = [];
     List<Offset> centers = [];
 
-    // moving
-    double animY = 160.0 - (objProgress * 320.0);
-    Offset animCenter = Offset(-80, animY);
+    // A. Animowany (ID 0) - Lewy Pas
+    double animY = 250.0 - (objProgress * 500.0);
+    Offset animCenter = Offset(-laneWidth * 0.85, animY);
     double movW = 70.0;
     double movH = 90.0;
     Rect animRect = Rect.fromCenter(
@@ -166,8 +216,8 @@ class _LidarImagePainter extends CustomPainter {
     boxes.add(animRect);
     centers.add(animCenter);
 
-    // static
-    double carX = 60;
+    // B. Statyczny (ID 1) - Prawy Pas
+    double carX = laneWidth;
     double carY = -50;
     double staW = 40;
     double staH = 80;
@@ -181,7 +231,7 @@ class _LidarImagePainter extends CustomPainter {
     centers.add(Offset(carX, carY));
 
     final paintRay = Paint()
-      ..color = Colors.green.withAlpha(180)
+      ..color = Colors.green
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.0;
 
@@ -206,8 +256,9 @@ class _LidarImagePainter extends CustomPainter {
     drawCar(0, animRect, movingImage);
     drawCar(1, staticRect, staticImage);
 
+    // --- 3. RAY CASTING ---
     int raysCount = 120;
-    double fov = 40 * (math.pi / 180);
+    double fov = 30 * (math.pi / 180);
 
     double? checkCollision(
       int id,
@@ -330,8 +381,9 @@ class _LidarImagePainter extends CustomPainter {
     }
 
     final paintCloud = Paint()
-      ..color = Colors.black.withAlpha(200)
-      ..strokeWidth = 2.0
+      // ..color = Colors.orange
+      ..color = Color(0xFFFFFF66)
+      ..strokeWidth = 3.0
       ..strokeCap = StrokeCap.round;
 
     final now = DateTime.now();
@@ -350,10 +402,28 @@ class _LidarImagePainter extends CustomPainter {
     }
     canvas.drawPoints(ui.PointMode.points, pointsToDraw, paintCloud);
 
-    canvas.drawRect(
-      Rect.fromCenter(center: center, width: 20, height: 36),
-      Paint()..color = Colors.blueGrey,
-    );
+    // Sender Car (Center)
+    if (senderImage != null) {
+      double sW = 60;
+      double sH = 80;
+      Rect senderRect = Rect.fromCenter(center: center, width: sW, height: sH);
+      canvas.drawImageRect(
+        senderImage!,
+        Rect.fromLTWH(
+          0,
+          0,
+          senderImage!.width.toDouble(),
+          senderImage!.height.toDouble(),
+        ),
+        senderRect,
+        Paint(),
+      );
+    } else {
+      canvas.drawRect(
+        Rect.fromCenter(center: center, width: 20, height: 36),
+        Paint()..color = Colors.blueGrey,
+      );
+    }
   }
 
   Offset? _getLineIntersection(Offset p1, Offset p2, Offset p3, Offset p4) {
