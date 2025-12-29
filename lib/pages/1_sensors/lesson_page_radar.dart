@@ -189,7 +189,15 @@ class _LessonPageState extends State<LessonPageRadar> {
               ),
               const SizedBox(height: 30),
 
-              RadarWaveWidget(),
+              // RadarWaveWidget(),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.white,
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: const RadarWaveWidget(),
+              ),
               const SizedBox(height: 30),
 
               SectionTitle(
