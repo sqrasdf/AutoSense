@@ -33,7 +33,7 @@ class _AnimationLidarState extends State<AnimationLidar>
   ui.Image? _movingImage;
   ByteData? _movingPixels;
 
-  // Obrazek środkowy (nadawca)
+  // sender image - center
   ui.Image? _senderImage;
 
   @override
@@ -112,7 +112,7 @@ class _AnimationLidarState extends State<AnimationLidar>
     return Container(
       height: 350,
       width: double.infinity,
-      color: const Color(0xFF333333), // Ciemny asfalt
+      color: const Color(0xFF333333),
       child: AnimatedBuilder(
         animation: Listenable.merge([_lidarController, _objectController]),
         builder: (context, child) {
@@ -168,7 +168,6 @@ class _LidarImagePainter extends CustomPainter {
     final maxRange = size.width * 0.55;
     final laneWidth = size.width / 3;
 
-    // --- 0. RYSOWANIE PASÓW (DASHED LINES) ---
     final paintLine = Paint()
       ..color = Colors.white.withAlpha(200)
       ..style = PaintingStyle.fill;
@@ -179,7 +178,6 @@ class _LidarImagePainter extends CustomPainter {
     double gapHeight = 20.0;
     double totalDashPattern = dashHeight + gapHeight;
 
-    // Przesunięcie animacji w dół (szybkie)
     double dyAnim = ((objProgress * 15) % 1.0) * totalDashPattern;
 
     double startY = -totalDashPattern;
@@ -198,11 +196,9 @@ class _LidarImagePainter extends CustomPainter {
       startY += totalDashPattern;
     }
 
-    // --- 1. DEFINICJA PRZESZKÓD ---
     List<Rect> boxes = [];
     List<Offset> centers = [];
 
-    // A. Animowany (ID 0) - Lewy Pas
     double animY = 250.0 - (objProgress * 500.0);
     Offset animCenter = Offset(-laneWidth * 0.85, animY);
     double movW = 70.0;
@@ -216,7 +212,6 @@ class _LidarImagePainter extends CustomPainter {
     boxes.add(animRect);
     centers.add(animCenter);
 
-    // B. Statyczny (ID 1) - Prawy Pas
     double carX = laneWidth;
     double carY = -50;
     double staW = 40;
@@ -256,7 +251,6 @@ class _LidarImagePainter extends CustomPainter {
     drawCar(0, animRect, movingImage);
     drawCar(1, staticRect, staticImage);
 
-    // --- 3. RAY CASTING ---
     int raysCount = 120;
     double fov = 30 * (math.pi / 180);
 
@@ -381,7 +375,6 @@ class _LidarImagePainter extends CustomPainter {
     }
 
     final paintCloud = Paint()
-      // ..color = Colors.orange
       ..color = Color(0xFFFFFF66)
       ..strokeWidth = 3.0
       ..strokeCap = StrokeCap.round;
@@ -402,7 +395,6 @@ class _LidarImagePainter extends CustomPainter {
     }
     canvas.drawPoints(ui.PointMode.points, pointsToDraw, paintCloud);
 
-    // Sender Car (Center)
     if (senderImage != null) {
       double sW = 60;
       double sH = 80;

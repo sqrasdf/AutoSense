@@ -231,9 +231,6 @@ class _LessonPageState extends State<LessonPageLidar> {
               // AnimationLidar(),
               Container(
                 decoration: BoxDecoration(
-                  // border: Border.all(
-                  //   color: Colors.greenAccent.withOpacity(0.3),
-                  // ),
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.white,
                 ),
