@@ -301,7 +301,7 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
               ),
 
               const SizedBox(height: 20),
-              GifWidget(assetPath: "assets/camera_view.gif"),
+              GifWidget(assetPath: "assets/camera_view_smaller.gif"),
 
               const SizedBox(height: 5),
               LinkText(
