@@ -1,4 +1,5 @@
 import 'package:autosense/lesson_widgets/bullet_point_lesson.dart';
+import 'package:autosense/lesson_widgets/gif_widget.dart';
 import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/main_text_widget.dart';
@@ -297,7 +298,10 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
                 description:
                     "Wgranie informacji o ograniczeniu prędkości lub zasadach ruchu do systemu pojazdu.",
               ),
-              // [MIEJSCE NA ANIMACJĘ]
+
+              const SizedBox(height: 20),
+              GifWidget(assetPath: "assets/camera_view.gif"),
+
               const SizedBox(height: 20),
 
               // 6. Zalety kamer w autonomicznych pojazdach
