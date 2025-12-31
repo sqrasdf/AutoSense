@@ -1,3 +1,4 @@
+import 'package:autosense/lesson_widgets/gif_widget.dart';
 import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
 import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/numer_list_widget.dart';
@@ -209,6 +210,9 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               ),
               const SizedBox(height: 20),
 
+              GifWidget(assetPath: "assets/ultrasounds_parking.gif"),
+
+              const SizedBox(height: 20),
               SectionTitle(title: "Ultradźwięki w systemach parkowania"),
               const SizedBox(height: 20),
               MainTextWidget(
