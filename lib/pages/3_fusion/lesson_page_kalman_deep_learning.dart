@@ -319,7 +319,7 @@ class _LessonPageKalmanDeepLearningState
                 children: [
                   const TextSpan(
                     text:
-                        "A samochody? 🚗 Raczej nie poruszają się po liniach prostych i nie operują w „liniowym świecie”. Dlatego stosuje się warianty:",
+                        "A samochody? Raczej nie poruszają się po liniach prostych i nie operują w „liniowym świecie”. Dlatego stosuje się warianty:",
                   ),
                 ],
               ),
