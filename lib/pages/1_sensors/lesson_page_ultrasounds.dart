@@ -210,6 +210,8 @@ class _LessonPageUltrasoundState extends State<LessonPageUltrasound> {
               ),
               const SizedBox(height: 20),
 
+              SectionTitle(title: "Wizualizacja działania ultradźwięków"),
+              const SizedBox(height: 20),
               GifWidget(assetPath: "assets/ultrasounds_parking.gif"),
 
               const SizedBox(height: 20),
