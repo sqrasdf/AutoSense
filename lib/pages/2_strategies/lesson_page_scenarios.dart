@@ -3,61 +3,12 @@ import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
 import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/numer_list_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
+import 'package:autosense/lesson_widgets/scenario_option_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/pages/3_fusion/lesson_page_fusion_basics.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
-
-class ScenarioOptionWidget extends StatelessWidget {
-  final String optionText;
-  final bool isCorrect;
-  final bool isSelected;
-
-  const ScenarioOptionWidget({
-    required this.optionText,
-    this.isCorrect = false,
-    this.isSelected = false,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    Color backgroundColor = isCorrect ? Colors.green.shade50 : Colors.white;
-    Color borderColor = isCorrect
-        ? Colors.green.shade300
-        : Colors.grey.shade300;
-    IconData icon = isCorrect ? Icons.check_circle : Icons.radio_button_off;
-    Color iconColor = isCorrect ? Colors.green : Colors.grey;
-
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-      margin: const EdgeInsets.only(bottom: 8.0),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(8.0),
-        border: Border.all(color: borderColor, width: 1.5),
-      ),
-      child: Row(
-        children: <Widget>[
-          Icon(icon, color: iconColor, size: 20),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Text(
-              optionText,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: isCorrect ? FontWeight.w600 : FontWeight.normal,
-                color: Colors.black,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class LessonPageScenarios extends StatefulWidget {
   const LessonPageScenarios({super.key});
@@ -109,6 +60,14 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
         debugPrint('LEKCJA $lessonNumber UKOŃCZONA!');
       }
     }
+  }
+
+  List<bool> correctAnswerClicked = [false, false, false];
+
+  void onCorrectAnswer(int index) {
+    setState(() {
+      correctAnswerClicked[index] = true;
+    });
   }
 
   @override
@@ -282,14 +241,11 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
                 description:
                     "Hamowanie, zatrzymanie, ominięcie lub kontynuacja jazdy.",
               ),
-              // [MIEJSCE NA ANIMACJĘ]
               const SizedBox(height: 20),
 
-              // Przykładowe scenariusze „Co zrobi pojazd?”
               SectionTitle(title: "Przykładowe scenariusze „Co zrobi pojazd?”"),
               const SizedBox(height: 20),
 
-              // SCENARIUSZ 1
               MainTextWidget(
                 children: [
                   const TextSpan(
@@ -336,28 +292,47 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
                 ],
               ),
 
-              // TODO: Make it interactive
               const SizedBox(height: 8),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "A) AI kontynuuje jazdę bez zmiany prędkości",
+                correctAnswerClicked: correctAnswerClicked[0],
+                index: 0,
               ),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "B) AI redukuje prędkość i przygotowuje hamowanie",
+                index: 0,
+                onCorrectAnswer: onCorrectAnswer,
                 isCorrect: true,
               ),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "C) AI zatrzymuje się natychmiast",
+                correctAnswerClicked: correctAnswerClicked[0],
+                index: 0,
               ),
               const SizedBox(height: 10),
               MainTextWidget(
                 children: [
                   const TextSpan(
-                    text: "Poprawna decyzja: B.",
+                    text: "Poprawna decyzja: ",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  const TextSpan(
+                  TextSpan(
+                    text: "B.",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: correctAnswerClicked[0]
+                          ? Colors.black
+                          : Colors.transparent,
+                    ),
+                  ),
+                  TextSpan(
                     text:
                         " Pojazd zwolni i przygotuje hamowanie, ponieważ pieszy może wejść na przejście.",
+                    style: TextStyle(
+                      color: correctAnswerClicked[0]
+                          ? Colors.black
+                          : Colors.transparent,
+                    ),
                   ),
                 ],
               ),
@@ -395,26 +370,46 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
                 ],
               ),
               const SizedBox(height: 8),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "A) AI wykonuje natychmiastową zmianę pasa",
+                correctAnswerClicked: correctAnswerClicked[1],
+                index: 1,
               ),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "B) AI hamuje awaryjnie",
                 isCorrect: true,
+                onCorrectAnswer: onCorrectAnswer,
+                index: 1,
               ),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "C) AI przyspiesza, aby utrzymać dystans",
+                correctAnswerClicked: correctAnswerClicked[1],
+                index: 1,
               ),
               const SizedBox(height: 10),
               MainTextWidget(
                 children: [
                   const TextSpan(
-                    text: "Poprawna decyzja: B.",
+                    text: "Poprawna decyzja: ",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  const TextSpan(
+                  TextSpan(
+                    text: "B.",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: correctAnswerClicked[1]
+                          ? Colors.black
+                          : Colors.transparent,
+                    ),
+                  ),
+                  TextSpan(
                     text:
-                        " Zmiana pasa jest zablokowana → jedyna poprawna reakcja: hamowanie awaryjne.",
+                        " Zmiana pasa jest zablokowana, więc jedyna poprawna reakcja to hamowanie awaryjne.",
+                    style: TextStyle(
+                      color: correctAnswerClicked[1]
+                          ? Colors.black
+                          : Colors.transparent,
+                    ),
                   ),
                 ],
               ),
@@ -466,24 +461,44 @@ class _LessonPageScenarioSelectionState extends State<LessonPageScenarios> {
                 ],
               ),
               const SizedBox(height: 8),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "A) Zatrzymać się",
                 isCorrect: true,
+                onCorrectAnswer: onCorrectAnswer,
+                index: 2,
               ),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "B) Ominąć przeszkodę wykonując skręt",
+                correctAnswerClicked: correctAnswerClicked[2],
+                index: 2,
               ),
-              const ScenarioOptionWidget(
+              ScenarioOptionWidget(
                 optionText: "C) Przyspieszyć, uznając, że to błąd czujnika",
+                correctAnswerClicked: correctAnswerClicked[2],
+                index: 2,
               ),
               const SizedBox(height: 10),
               MainTextWidget(
                 children: [
                   const TextSpan(
-                    text: "Poprawna decyzja: A.",
+                    text: "Poprawna decyzja: ",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  const TextSpan(
+                  TextSpan(
+                    text: "A.",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: correctAnswerClicked[2]
+                          ? Colors.black
+                          : Colors.transparent,
+                    ),
+                  ),
+                  TextSpan(
+                    style: TextStyle(
+                      color: correctAnswerClicked[2]
+                          ? Colors.black
+                          : Colors.transparent,
+                    ),
                     text:
                         " Przy małych prędkościach ultradźwięki mają najwyższy priorytet — AI zatrzyma pojazd.",
                   ),
