@@ -114,7 +114,8 @@ class _RadarWaveWidgetState extends State<RadarWaveWidget>
     return Container(
       height: 250,
       width: double.infinity,
-      color: const Color.fromARGB(255, 246, 246, 246),
+      // color: const Color.fromARGB(255, 246, 246, 246),
+      color: const Color(0xFF333333),
       child: AnimatedBuilder(
         animation: _controller,
         builder: (context, child) {
@@ -204,7 +205,7 @@ class RadarWavePainter extends CustomPainter {
       if (obj.image != null) {
         canvas.save();
         canvas.translate(pos.dx, pos.dy);
-        canvas.rotate((obj.angle) * (math.pi / 180));
+        // canvas.rotate((obj.angle) * (math.pi / 180));
 
         Rect dstRect = Rect.fromCenter(
           center: Offset.zero,
