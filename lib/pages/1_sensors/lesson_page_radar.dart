@@ -189,6 +189,8 @@ class _LessonPageState extends State<LessonPageRadar> {
               ),
               const SizedBox(height: 30),
 
+              SectionTitle(title: "Wizualizacja działania"),
+              const SizedBox(height: 15),
               // RadarWaveWidget(),
               Container(
                 decoration: BoxDecoration(

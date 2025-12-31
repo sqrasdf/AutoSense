@@ -227,7 +227,8 @@ class _LessonPageState extends State<LessonPageLidar> {
                 ],
               ),
               SizedBox(height: 20),
-
+              SectionTitle(title: "Wizualizacja działania"),
+              const SizedBox(height: 15),
               // AnimationLidar(),
               Container(
                 decoration: BoxDecoration(

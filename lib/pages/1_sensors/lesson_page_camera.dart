@@ -301,6 +301,8 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
               ),
 
               const SizedBox(height: 20),
+              SectionTitle(title: "Wizualizacja wykrywania obiektów"),
+              const SizedBox(height: 15),
               GifWidget(assetPath: "assets/camera_view_smaller.gif"),
 
               const SizedBox(height: 5),
@@ -312,11 +314,9 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
 
               const SizedBox(height: 20),
 
-              // 6. Zalety kamer w autonomicznych pojazdach
               SectionTitle(title: "Zalety kamer w autonomicznych pojazdach"),
               const SizedBox(height: 20),
 
-              // Lista ikon (TextIconWidget)
               TextIconWidget(
                 icon: Icons.details_outlined,
                 text: "Bardzo szczegółowy obraz otoczenia.",
@@ -345,7 +345,6 @@ class _LessonPageCameraState extends State<LessonPageCamera> {
               ),
               const SizedBox(height: 20),
 
-              // Przyciski nawigacyjne
               const LessonNavigationButtons(
                 nextPageWidget: LessonPageUltrasound(),
               ),
