@@ -115,7 +115,7 @@ class _LessonPageRealWorldExamplesState
     }
   }
 
-  List<bool> correctAnswerClicked = [false, false, false];
+  List<bool> correctAnswerClicked = [false, false, false, false];
 
   void onCorrectAnswer(int index) {
     setState(() {
@@ -137,7 +137,7 @@ class _LessonPageRealWorldExamplesState
             children: [
               LessonTitlePanel(
                 title:
-                    "Przykłady realnych aut + Quiz „Jaki to poziom autonomii?”",
+                    "Przykłady realnych aut i quiz „Jaki to poziom autonomii?”",
                 lessonNumber: lessonNumber,
               ),
               const SizedBox(height: 5),
@@ -235,7 +235,6 @@ class _LessonPageRealWorldExamplesState
                 ],
               ),
               const SizedBox(height: 10),
-
               ScenarioOptionWidget(
                 optionText: "A) 1",
                 index: 0,
@@ -252,8 +251,107 @@ class _LessonPageRealWorldExamplesState
                 correctAnswerClicked: correctAnswerClicked[0],
                 index: 0,
               ),
-
               const SizedBox(height: 20),
+
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "2. Samochód jedzie w korku do 60 km/h, kierowca może odłożyć ręce i przestać obserwować drogę. Auto poprosi o przejęcie sterów, jeśli sytuacja stanie się zbyt trudna.",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              ScenarioOptionWidget(
+                optionText: "A) 1",
+                index: 1,
+                correctAnswerClicked: correctAnswerClicked[1],
+              ),
+              ScenarioOptionWidget(
+                optionText: "B) 2",
+                index: 1,
+                correctAnswerClicked: correctAnswerClicked[1],
+              ),
+              ScenarioOptionWidget(
+                optionText: "C) 3",
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+                index: 1,
+              ),
+              const SizedBox(height: 20),
+
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "3. Auto jedzie całkowicie bez kierowcy, ale tylko w jednej dzielnicy dużego miasta. Poza nią nie ruszy.",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              ScenarioOptionWidget(
+                optionText: "A) 3",
+                index: 2,
+                correctAnswerClicked: correctAnswerClicked[2],
+              ),
+              ScenarioOptionWidget(
+                optionText: "B) 4",
+                index: 2,
+                correctAnswerClicked: correctAnswerClicked[2],
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+              ),
+              ScenarioOptionWidget(
+                optionText: "C) 5",
+                correctAnswerClicked: correctAnswerClicked[2],
+                index: 2,
+              ),
+              const SizedBox(height: 20),
+
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "4. Auto bez kierownicy i pedałów, które potrafi jechać w każdych warunkach - w śniegu, deszczu, mieście, na autostradzie.",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              ScenarioOptionWidget(
+                optionText: "A) 3",
+                index: 3,
+                correctAnswerClicked: correctAnswerClicked[3],
+              ),
+              ScenarioOptionWidget(
+                optionText: "B) 4",
+                index: 3,
+                correctAnswerClicked: correctAnswerClicked[3],
+              ),
+              ScenarioOptionWidget(
+                optionText: "C) 5",
+                correctAnswerClicked: correctAnswerClicked[3],
+                index: 3,
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+              ),
+              const SizedBox(height: 10),
+              MainTextWidget(
+                children: [
+                  TextSpan(
+                    text: "Takie rozwiązanie jeszcze nie istnieje komercyjnie.",
+                    style: TextStyle(
+                      color: correctAnswerClicked[3]
+                          ? Colors.black
+                          : Colors.transparent,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 30),
               const LessonNavigationButtons(),
               const SizedBox(height: 40),
             ],
