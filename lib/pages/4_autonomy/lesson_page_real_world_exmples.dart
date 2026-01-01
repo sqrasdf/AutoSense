@@ -2,6 +2,7 @@ import 'package:autosense/lesson_widgets/bullet_point_lesson.dart';
 import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
 import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/point_list_widget.dart';
+import 'package:autosense/lesson_widgets/scenario_option_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/utils.dart';
@@ -114,6 +115,14 @@ class _LessonPageRealWorldExamplesState
     }
   }
 
+  List<bool> correctAnswerClicked = [false, false, false];
+
+  void onCorrectAnswer(int index) {
+    setState(() {
+      correctAnswerClicked[index] = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     const double horizontalPadding = 25;
@@ -219,12 +228,32 @@ class _LessonPageRealWorldExamplesState
               MainTextWidget(
                 children: [
                   const TextSpan(
-                    text: "TODO", // TODO
+                    text:
+                        "1. Auto jedzie samo na autostradzie, utrzymuje pas i prędkość. Kierowca musi trzymać ręce na kierownicy.",
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 10),
 
+              ScenarioOptionWidget(
+                optionText: "A) 1",
+                index: 0,
+                correctAnswerClicked: correctAnswerClicked[0],
+              ),
+              ScenarioOptionWidget(
+                optionText: "B) 2",
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+                index: 0,
+              ),
+              ScenarioOptionWidget(
+                optionText: "C) 3",
+                correctAnswerClicked: correctAnswerClicked[0],
+                index: 0,
+              ),
+
+              const SizedBox(height: 20),
               const LessonNavigationButtons(),
               const SizedBox(height: 40),
             ],
