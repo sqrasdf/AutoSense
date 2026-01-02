@@ -2,6 +2,7 @@ import 'package:autosense/pages/1_sensors/lessons_page_sensors.dart';
 import 'package:autosense/pages/2_strategies/lessons_page_strategies.dart';
 import 'package:autosense/pages/3_fusion/lessons_page_fusion.dart';
 import 'package:autosense/pages/4_autonomy/lessons_page_autonomy.dart';
+import 'package:autosense/pages/5_quiz/lesson_page_final_quiz.dart';
 import 'package:autosense/widgets/auto_sense_panel.dart';
 import 'package:autosense/widgets/module_card.dart';
 import 'package:autosense/widgets/progress_bar.dart';
@@ -108,7 +109,9 @@ class _HomePageState extends State<HomePage> {
                   debugPrint('Otwieram Symuację drogową');
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Scaffold()),
+                    MaterialPageRoute(
+                      builder: (context) => const LessonPageFinalQuiz(),
+                    ),
                   );
                 },
               ),
