@@ -1,3 +1,4 @@
+import 'package:autosense/lesson_widgets/lesson_navigation_buttons.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
 import 'package:autosense/lesson_widgets/main_text_widget.dart';
 import 'package:autosense/lesson_widgets/scenario_option_widget.dart';
@@ -110,7 +111,9 @@ class LessonPageFinalQuizState extends State<LessonPageFinalQuiz> {
 
                 index: 0,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
+              const LessonNavigationButtons(),
+              const SizedBox(height: 40),
             ],
           ),
         ),

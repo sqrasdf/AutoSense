@@ -5,6 +5,7 @@ import 'package:autosense/lesson_widgets/point_list_widget.dart';
 import 'package:autosense/lesson_widgets/scenario_option_widget.dart';
 import 'package:autosense/lesson_widgets/section_title.dart';
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
+import 'package:autosense/pages/5_quiz/lesson_page_final_quiz.dart';
 import 'package:autosense/utils.dart';
 import 'package:autosense/widgets/comparison_table.dart';
 import 'package:flutter/material.dart';
@@ -352,7 +353,9 @@ class _LessonPageRealWorldExamplesState
               ),
 
               const SizedBox(height: 30),
-              const LessonNavigationButtons(),
+              const LessonNavigationButtons(
+                nextPageWidget: LessonPageFinalQuiz(),
+              ),
               const SizedBox(height: 40),
             ],
           ),
