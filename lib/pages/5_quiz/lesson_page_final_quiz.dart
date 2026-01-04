@@ -1,4 +1,6 @@
 import 'package:autosense/lesson_widgets/lesson_title_panel.dart';
+import 'package:autosense/lesson_widgets/main_text_widget.dart';
+import 'package:autosense/lesson_widgets/scenario_option_widget.dart';
 import 'package:autosense/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -53,6 +55,14 @@ class LessonPageFinalQuizState extends State<LessonPageFinalQuiz> {
     }
   }
 
+  List<bool> correctAnswerClicked = [false, false, false, false];
+
+  void onCorrectAnswer(int index) {
+    setState(() {
+      correctAnswerClicked[index] = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     const double horizontalPadding = 25;
@@ -72,6 +82,35 @@ class LessonPageFinalQuizState extends State<LessonPageFinalQuiz> {
               const SizedBox(height: 5),
               const Divider(),
               const SizedBox(height: 10),
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "Auto zbliża się do przejścia dla pieszych. Na chodniku stoi osoba patrząca w telefon, zwrócona tyłem do jezdni, ale blisko krawężnika. Jak powinien zareagować algorytm predykcji AI?",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              ScenarioOptionWidget(
+                optionText: "A: Kontynuować jazdę z tą samą prędkością",
+                index: 0,
+                correctAnswerClicked: correctAnswerClicked[1],
+              ),
+              ScenarioOptionWidget(
+                optionText: "B: Zwolnić i przygotować system hamowania",
+                index: 0,
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+              ),
+              ScenarioOptionWidget(
+                optionText:
+                    "C: Użyć sygnału dźwiękowego i przyspieszyć, aby szybciej opuścić strefę zagrożenia",
+                correctAnswerClicked: correctAnswerClicked[0],
+
+                index: 0,
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
