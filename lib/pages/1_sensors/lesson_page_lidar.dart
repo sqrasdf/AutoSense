@@ -53,7 +53,7 @@ class _LessonPageState extends State<LessonPageLidar> {
           _isLessonCompleted = true;
         });
 
-        await saveLessonCompletionByIndex(lessonNumber - 1, 13);
+        await saveLessonCompletionByIndex(lessonNumber - 1, 14);
 
         _scrollController.removeListener(_checkScrollCompletion);
 
