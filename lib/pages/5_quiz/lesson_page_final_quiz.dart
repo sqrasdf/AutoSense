@@ -96,7 +96,7 @@ class LessonPageFinalQuizState extends State<LessonPageFinalQuiz> {
               ScenarioOptionWidget(
                 optionText: "A: Kontynuować jazdę z tą samą prędkością",
                 index: 0,
-                correctAnswerClicked: correctAnswerClicked[1],
+                correctAnswerClicked: correctAnswerClicked[0],
               ),
               ScenarioOptionWidget(
                 optionText: "B: Zwolnić i przygotować system hamowania",
@@ -108,10 +108,101 @@ class LessonPageFinalQuizState extends State<LessonPageFinalQuiz> {
                 optionText:
                     "C: Użyć sygnału dźwiękowego i przyspieszyć, aby szybciej opuścić strefę zagrożenia",
                 correctAnswerClicked: correctAnswerClicked[0],
-
                 index: 0,
               ),
               const SizedBox(height: 30),
+
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "Jest noc i gęsta mgła. Kamera widzi tylko białą plamę, ale LIDAR wykrywa obiekt stały 30 metrów przed pojazdem. Radar potwierdza, że obiekt się nie porusza. Jaką decyzję podejmie system fuzji sensorów?",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              ScenarioOptionWidget(
+                optionText:
+                    "A: Zignorować odczyt LIDAR-u (kamera ma priorytet, a obraz jest pusty)",
+                index: 1,
+                correctAnswerClicked: correctAnswerClicked[1],
+              ),
+              ScenarioOptionWidget(
+                optionText:
+                    "B: Uznać obiekt za rzeczywistą przeszkodę i natychmiast rozpocząć hamowanie (zasada ograniczonego zaufania do wizji)",
+                index: 1,
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+              ),
+              ScenarioOptionWidget(
+                optionText:
+                    "C: Wyłączyć systemy autonomiczne i poprosić kierowcę o przejęcie kontroli bez hamowania",
+                correctAnswerClicked: correctAnswerClicked[1],
+                index: 1,
+              ),
+              const SizedBox(height: 30),
+
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "Auto autonomiczne (Poziom 4) jedzie pasem w korku. Mikrofony kierunkowe wykrywają sygnał syreny (ambulanse) z tyłu po lewej stronie. Kamera boczna jeszcze go nie widzi. Co powinno zrobić AI?",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              ScenarioOptionWidget(
+                optionText:
+                    "A: Czekać, aż ambulans pojawi się w polu widzenia kamery",
+                index: 2,
+                correctAnswerClicked: correctAnswerClicked[2],
+              ),
+              ScenarioOptionWidget(
+                optionText:
+                    "B: Przeanalizować mapę, aby znaleźć miejsce do zjechania na bok i powoli przygotowuje korytarz życia, zanim ambulans dojedzi",
+                index: 2,
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+              ),
+              ScenarioOptionWidget(
+                optionText:
+                    "C: Przyspieszyć, aby uciec przed ambulansem i nie blokować drogi",
+                correctAnswerClicked: correctAnswerClicked[2],
+                index: 2,
+              ),
+              const SizedBox(height: 30),
+
+              MainTextWidget(
+                children: [
+                  const TextSpan(
+                    text:
+                        "Auto jedzie z prędkością v = 70km/h na mokrej nawierzchni. Nagle na drogę wyskakuje zwierzę. System musi obliczyć drogę hamowania d. Jeśli współczynnik przyczepności spadł o 40%, co zrobi algorytm bezpieczeństwa?",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              ScenarioOptionWidget(
+                optionText: "A: Zastosuje standardową siłę hamowania",
+                index: 3,
+                correctAnswerClicked: correctAnswerClicked[3],
+              ),
+              ScenarioOptionWidget(
+                optionText:
+                    "B: Zwiększy siłę hamowania pulsacyjnie (ABS) i przygotuje manewr omijania, jeśli droga d przekroczy dystans do przeszkody",
+                index: 3,
+                onCorrectAnswer: onCorrectAnswer,
+                isCorrect: true,
+              ),
+              ScenarioOptionWidget(
+                optionText: "C: Wyłączy silnik, aby zredukować prędkość",
+                correctAnswerClicked: correctAnswerClicked[3],
+                index: 3,
+              ),
+              const SizedBox(height: 30),
+
               const LessonNavigationButtons(),
               const SizedBox(height: 40),
             ],
